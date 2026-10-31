@@ -1,0 +1,4 @@
+# Mockup em avaliação pela cliente — fora de buscadores.
+# Remover este arquivo quando o site for lançado de verdade.
+User-agent: *
+Disallow: /

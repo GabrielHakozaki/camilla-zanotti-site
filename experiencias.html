@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>SouLBee — Experiências sensoriais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Jost:ital,wght@0,300..500;1,400&display=swap">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<!-- ============================================================
+     == SB:EXPERIENCIAS == a página que mais vende
+     ============================================================
+     Mundo SouLBee inteiro, com navegação que se basta: um
+     restaurante que chega direto aqui nunca precisa ver o
+     enquadramento de biodiversidade se não quiser.
+
+     Montada para virar subdomínio depois sem refazer nada — os
+     links para fora são relativos e poucos.
+     ============================================================ -->
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <!-- abelha de voo: asas em grupos próprios, senão o transform
+       do voo briga com o da batida -->
+  <g id="sb-abelha-voo" fill="none" stroke="currentColor" stroke-width="1.2"
+     stroke-linecap="round" vector-effect="non-scaling-stroke">
+    <g class="asa"><path d="M23 17 C15 11 5 14 3 22 C2 28 9 32 16 30 C22 28 25 23 23 17 Z"/></g>
+    <g class="asa"><path d="M25 17 C33 11 43 14 45 22 C46 28 39 32 32 30 C26 28 23 23 25 17 Z"/></g>
+    <ellipse cx="24" cy="20" rx="7" ry="6.5"/>
+    <path d="M24 26 C30 26 31 33 30 39 C29 46 26 52 24 53 C22 52 19 46 18 39 C17 33 18 26 24 26 Z"/>
+    <g stroke="none" fill="var(--band,#D99B2B)" opacity=".8">
+      <rect x="17.5" y="31" width="13" height="3.4" rx="1"/>
+      <rect x="18" y="38" width="12" height="3.2" rx="1"/>
+    </g>
+    <ellipse cx="24" cy="10" rx="5.4" ry="4.8"/>
+    <path d="M21 6 C19 3 18 2 16 0 M27 6 C29 3 30 2 32 0"/>
+  </g>
+
+  <symbol id="glifo-bee" viewBox="0 0 48 56" fill="none" stroke="currentColor"
+          stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke">
+    <path d="M23 17 C15 11 5 14 3 22 C2 28 9 32 16 30 C22 28 25 23 23 17 Z"/>
+    <path d="M25 17 C33 11 43 14 45 22 C46 28 39 32 32 30 C26 28 23 23 25 17 Z"/>
+    <ellipse cx="24" cy="20" rx="7" ry="6.5"/>
+    <path d="M24 26 C30 26 31 33 30 39 C29 46 26 52 24 53 C22 52 19 46 18 39 C17 33 18 26 24 26 Z"/>
+    <path d="M18 32 H30 M18 39 H30" opacity=".6"/>
+    <ellipse cx="24" cy="10" rx="5.4" ry="4.8"/>
+    <path d="M21 6 C19 3 18 2 16 0 M27 6 C29 3 30 2 32 0"/>
+  </symbol>
+</svg>
+
+<div id="site" lang="pt-BR" data-marca="soulbee">
+
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<div class="aviso mono-caps">
+  Mockup para aprovação · textos e imagens sujeitos a revisão ·
+  trechos entre <b>[colchetes]</b> aguardam informação
+</div>
+
+<span class="sentinela" id="sentinela" aria-hidden="true"></span>
+
+<header class="hdr" id="hdr">
+  <div class="container hdr-in">
+    <a class="wm-sb" href="index.html" aria-label="SouLBee, por Camilla Zanotti Gallon">
+      <svg viewBox="0 0 48 56" aria-hidden="true" style="color:var(--sb-sage)"><use href="#glifo-bee"/></svg>
+      <b>SouLBee</b>
+    </a>
+    <nav class="hdr-nav" aria-label="Navegação principal">
+      <a href="#ofertas">Experiências</a>
+      <a href="#autoridade">Quem conduz</a>
+      <a href="#meis">Os méis</a>
+      <a href="meliponicultura.html">Meliponicultura</a>
+      <a href="index.html">Camilla / ZG</a>
+    </nav>
+    <a class="btn btn-1 hdr-cta" href="contato.html?oferta=degustacao-equipes"
+       style="min-height:40px;padding:0 var(--s-5)">Agendar</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">
+      Menu <span class="burger-x" aria-hidden="true"></span>
+    </button>
+  </div>
+  <span class="hdr-fio" aria-hidden="true"></span>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <button class="menu-fechar" id="menu-fechar">Fechar</button>
+  <a href="#ofertas">Experiências</a>
+  <a href="#autoridade">Quem conduz</a>
+  <a href="#meis">Os méis</a>
+  <a href="meliponicultura.html">Meliponicultura</a>
+  <a href="index.html">Camilla / ZG</a>
+  <a href="contato.html?oferta=degustacao-equipes">Agendar</a>
+</div>
+
+<main id="conteudo">
+
+<!-- ============================================================
+     == SB:HERO == o mundo SouLBee: creme, sage e mel
+     ============================================================ -->
+<section class="hero band-dark" style="overflow:hidden">
+  <div class="art"><div id="voo" aria-hidden="true"></div></div>
+  <div class="container corpo">
+    <div class="g12" style="align-items:center;row-gap:var(--s-7)">
+      <div style="grid-column:1 / span 6">
+        <span class="eyebrow">SouLBee · experiências sensoriais</span>
+        <h1 style="font-size:var(--fs-hero)">Mel não é um sabor.<br>É uma paisagem.</h1>
+        <p class="lead">
+          Degustações guiadas, harmonizações e curadoria sensorial de méis de
+          abelhas nativas — conduzidas por quem pesquisa essas abelhas.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-1" href="contato.html?oferta=degustacao-equipes">Agendar uma degustação</a>
+          <a class="btn btn-2" href="#ofertas">Ver as experiências</a>
+        </div>
+      </div>
+      <div style="grid-column:8 / span 5">
+        <figure class="moldura tem-foto" style="--ratio:4/5;--pos:50% 55%">
+          <img src="assets/produto-4.jpg" alt="Pote de mel jataí ao lado de uma tábua de queijos" fetchpriority="high" decoding="async">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="divisor" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0 H1440 V48 C1180 68 1010 52 760 62 C520 72 300 80 0 62 Z" fill="#2A2E20"/>
+  <g fill="#2A2E20">
+    <g class="gota" style="--dl:0ms"><rect x="306" y="18" width="4" height="48"/><ellipse cx="308" cy="68" rx="8" ry="11"/></g>
+    <g class="gota" style="--dl:1500ms"><rect x="884.5" y="18" width="3" height="44"/><ellipse cx="886" cy="64" rx="6.5" ry="9"/></g>
+  </g>
+</svg>
+
+<!-- ============================================================
+     == SB:OFERTAS ==
+     O esqueleto fixo é o que transforma "área de atuação" em
+     algo comprável: O que é · Para quem · O que você recebe ·
+     Como funciona · Prazo · Investimento · Começar.
+     ============================================================ -->
+<section class="sec band-page" id="ofertas">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:var(--s-8);max-width:62ch">
+      <span class="eyebrow">O que dá para contratar</span>
+      <h2 style="margin-top:var(--s-4)">Quatro formas de trabalhar junto.</h2>
+      <p class="lead" style="margin-top:var(--s-4)">
+        Todas conduzidas pessoalmente, com méis selecionados um a um.
+        <span class="ph">[preencher: formatos, duração e nº de participantes de cada uma]</span>
+      </p>
+    </div>
+
+    <div class="ofertas">
+
+      <article class="oferta reveal" data-i="0">
+        <div class="oferta-topo">
+          <span class="oferta-tag">01 · mais procurada</span>
+          <h3>Degustação guiada para equipes e eventos</h3>
+          <p class="oferta-sub">
+            Uma sessão conduzida em que o grupo prova méis de espécies
+            diferentes lado a lado e aprende a nomear o que está sentindo.
+          </p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Para quem</dt><dd>Restaurantes, lojas, eventos corporativos, equipes de sala e cozinha</dd></div>
+            <div><dt>Você recebe</dt><dd><ul>
+              <li>Condução por sommelière de méis</li>
+              <li><span class="ph">[nº]</span> méis de abelhas nativas, servidos em sequência</li>
+              <li>Material de apoio com o vocabulário sensorial</li>
+              <li><span class="ph">[preencher: o que mais acompanha]</span></li>
+            </ul></dd></div>
+            <div><dt>Como funciona</dt><dd>Alinhamento do objetivo → seleção dos méis → sessão conduzida → fechamento com perguntas</dd></div>
+            <div><dt>Duração</dt><dd><span class="ph">[preencher: duração]</span></dd></div>
+            <div><dt>Formato</dt><dd><span class="ph">[presencial · nº de participantes]</span></dd></div>
+          </dl>
+          <div class="oferta-preco">
+            <b>R$ <span class="ph">[valor]</span></b>
+            <small>sob proposta</small>
+          </div>
+          <a class="btn btn-1" href="contato.html?oferta=degustacao-equipes">Começar</a>
+        </div>
+      </article>
+
+      <article class="oferta reveal" data-i="1">
+        <div class="oferta-topo">
+          <span class="oferta-tag">02</span>
+          <h3>Harmonização de méis</h3>
+          <p class="oferta-sub">
+            Construção de combinações entre méis e os produtos da casa — queijos,
+            pães, carnes, sobremesas, drinques — com critério sensorial, não por
+            tentativa.
+          </p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Para quem</dt><dd>Restaurantes, bares, confeitarias, adegas e lojas de produtos de origem</dd></div>
+            <div><dt>Você recebe</dt><dd><ul>
+              <li>Mapa de harmonizações para o seu cardápio</li>
+              <li>Justificativa sensorial de cada combinação</li>
+              <li>Treinamento curto da equipe de sala</li>
+              <li><span class="ph">[preencher: entregáveis]</span></li>
+            </ul></dd></div>
+            <div><dt>Como funciona</dt><dd>Visita ou envio do cardápio → prova dirigida → proposta de combinações → treinamento</dd></div>
+            <div><dt>Prazo típico</dt><dd><span class="ph">[preencher]</span></dd></div>
+          </dl>
+          <div class="oferta-preco">
+            <b>R$ <span class="ph">[valor]</span></b>
+            <small>sob proposta</small>
+          </div>
+          <a class="btn btn-1" href="contato.html?oferta=harmonizacao">Começar</a>
+        </div>
+      </article>
+
+      <article class="oferta reveal" data-i="2">
+        <div class="oferta-topo">
+          <span class="oferta-tag">03</span>
+          <h3>Curadoria e análise sensorial de méis</h3>
+          <p class="oferta-sub">
+            Avaliação técnica de lotes: descrição, classificação e orientação
+            sobre o que cada mel comunica — para quem produz e para quem vende.
+          </p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Para quem</dt><dd>Produtores, meliponicultores, marcas de mel e organizadores de concurso</dd></div>
+            <div><dt>Você recebe</dt><dd><ul>
+              <li>Descrição sensorial por lote</li>
+              <li>Classificação e comparação entre amostras</li>
+              <li>Recomendações de posicionamento e rotulagem</li>
+              <li><span class="ph">[preencher: formato do laudo]</span></li>
+            </ul></dd></div>
+            <div><dt>Como funciona</dt><dd>Envio das amostras → análise → devolutiva escrita → conversa de leitura dos resultados</dd></div>
+            <div><dt>Prazo típico</dt><dd><span class="ph">[preencher]</span></dd></div>
+          </dl>
+          <div class="oferta-preco">
+            <b>R$ <span class="ph">[valor]</span></b>
+            <small>por lote · sob proposta</small>
+          </div>
+          <a class="btn btn-1" href="contato.html?oferta=curadoria">Começar</a>
+        </div>
+      </article>
+
+      <article class="oferta reveal" data-i="3">
+        <div class="oferta-topo">
+          <span class="oferta-tag">04</span>
+          <h3>Jurada e consultoria para concursos</h3>
+          <p class="oferta-sub">
+            Participação em bancas de avaliação e apoio metodológico à montagem
+            de provas sensoriais.
+          </p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Para quem</dt><dd>Concursos de méis, feiras, associações e instituições</dd></div>
+            <div><dt>Você recebe</dt><dd><ul>
+              <li>Avaliação por jurada com atuação nacional e internacional</li>
+              <li>Apoio ao desenho da ficha e do protocolo de prova</li>
+              <li><span class="ph">[preencher: escopo]</span></li>
+            </ul></dd></div>
+            <div><dt>Disponibilidade</dt><dd>Mediante agenda</dd></div>
+          </dl>
+          <div class="oferta-preco">
+            <b><span class="ph">[sob consulta]</span></b>
+          </div>
+          <a class="btn btn-1" href="contato.html?oferta=jurada">Falar sobre o concurso</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     == SB:AUTORIDADE ==
+     O argumento de preço. A degustação não custa o que custa
+     por ser degustação — custa por quem conduz.
+     ============================================================ -->
+<section class="sec band-sunken" id="autoridade">
+  <div class="container">
+    <div class="g12" style="align-items:center;row-gap:var(--s-7)">
+      <div style="grid-column:1 / span 5" class="reveal">
+        <figure class="moldura tem-foto" style="--ratio:3/2;--pos:50% 50%">
+          <img src="assets/produto-5.jpg" alt="Expositor SouLBee com kits e potes em uma adega" loading="lazy" decoding="async">
+        </figure>
+      </div>
+      <div style="grid-column:7 / span 6" class="reveal" data-i="1">
+        <span class="eyebrow">Quem conduz</span>
+        <h2 style="margin-top:var(--s-4)">Uma degustação conduzida por quem pesquisa a abelha.</h2>
+        <p style="margin-top:var(--s-5)">
+          Camilla Zanotti Gallon é bióloga, pesquisadora e sommelière de méis,
+          com mestrado pela UFES e doutorado pela USP. É formada pelo Instituto
+          4e e atua como jurada em concursos nacionais e internacionais.
+        </p>
+        <p style="margin-top:var(--s-4)">
+          É essa base que faz a diferença entre provar mel e entender o que se
+          está provando — e é ela que sustenta o que cada experiência entrega.
+        </p>
+        <ul class="creds" style="margin-top:var(--s-6)">
+          <li>Bióloga</li>
+          <li>Mestrado — UFES</li>
+          <li>Doutorado — USP</li>
+          <li>Sommelière de méis — Instituto 4e</li>
+          <li>Jurada nacional e internacional</li>
+        </ul>
+        <a class="lnk lnk-ac" href="index.html" style="margin-top:var(--s-6)">Conhecer a trajetória completa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     == SB:MEIS == catálogo em segundo plano, de propósito
+     O documento é explícito: SouLBee não é comércio de mel. Os
+     potes aparecem como consequência da experiência, não como
+     manchete.
+     ============================================================ -->
+<section class="sec band-page" id="meis">
+  <div class="container">
+    <div class="g12" style="row-gap:var(--s-6);margin-bottom:var(--s-7)">
+      <div style="grid-column:1 / span 6" class="reveal">
+        <span class="eyebrow">Os méis</span>
+        <h2 style="margin-top:var(--s-4)">O que se prova nas experiências.</h2>
+      </div>
+      <p class="mono reveal" data-i="1" style="grid-column:8 / span 5;align-self:end;color:var(--tx-2)">
+        Méis de abelhas nativas sem ferrão, de espécies diferentes — e cada
+        espécie entrega um mel diferente. Também disponíveis em potes e kits
+        presente.
+      </p>
+    </div>
+
+    <div class="g12" style="row-gap:var(--s-6)">
+      <div style="grid-column:span 4" class="reveal" data-i="0">
+        <figure class="moldura tem-foto" style="--ratio:4/5">
+          <img src="assets/produto-1.jpg" alt="Seis potes de mel SouLBee enfileirados, com caixa presente e favo" loading="lazy" decoding="async">
+        </figure>
+        <h3 style="margin-top:var(--s-4)">A linha</h3>
+        <p style="color:var(--tx-2);font-size:var(--fs-300);margin-top:var(--s-2)">
+          <span class="ph">[confirmar: espécies e nomes científicos da linha]</span>
+        </p>
+      </div>
+      <div style="grid-column:span 4" class="reveal" data-i="1">
+        <figure class="moldura tem-foto" style="--ratio:4/5">
+          <img src="assets/produto-9.jpg" alt="Pote de mel jataí sobre tábua com queijos" loading="lazy" decoding="async">
+        </figure>
+        <h3 style="margin-top:var(--s-4)">Harmonização</h3>
+        <p style="color:var(--tx-2);font-size:var(--fs-300);margin-top:var(--s-2)">
+          O mesmo mel muda conforme o que o acompanha — é disso que trata a
+          oferta 02.
+        </p>
+      </div>
+      <div style="grid-column:span 4" class="reveal" data-i="2">
+        <figure class="moldura tem-foto" style="--ratio:4/5">
+          <img src="assets/produto-8.jpg" alt="Caixa presente SouLBee com laço de cetim, segurada nas mãos" loading="lazy" decoding="async">
+        </figure>
+        <h3 style="margin-top:var(--s-4)">Kits presente</h3>
+        <p style="color:var(--tx-2);font-size:var(--fs-300);margin-top:var(--s-2)">
+          Para presente corporativo e datas comemorativas.
+          <span class="ph">[preencher: formatos e preços]</span>
+        </p>
+      </div>
+    </div>
+
+    <p class="mono-caps reveal" style="color:var(--tx-2);margin-top:var(--s-6)">
+      <span class="ph">[confirmar: as imagens desta se&ccedil;&atilde;o s&atilde;o estudo e aguardam as fotos finais]</span>
+    </p>
+  </div>
+</section>
+
+<!-- == SB:CTA == -->
+<section class="sec band-dark" id="agendar">
+  <div class="container" style="text-align:center;max-width:720px">
+    <span class="eyebrow reveal">Agendar</span>
+    <h2 class="reveal" data-i="1" style="margin-top:var(--s-4)">Vamos provar um mel juntos?</h2>
+    <p class="lead reveal" data-i="2" style="margin:var(--s-4) auto 0">
+      Conte o formato que você imagina — equipe, evento, cardápio ou lote — e eu
+      volto com a proposta.
+    </p>
+    <div class="btn-row reveal" data-i="3" style="justify-content:center;margin-top:var(--s-7)">
+      <a class="btn btn-1" href="contato.html?oferta=degustacao-equipes">Agendar uma degustação</a>
+      <a class="btn btn-2" href="https://instagram.com/soulbee.o" target="_blank" rel="noopener noreferrer">@soulbee.o</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft band-dark-2">
+  <div class="container">
+    <div class="g12 ft-grid">
+      <div class="ft-marca">
+        <span class="wm-sb">
+          <svg viewBox="0 0 48 56" aria-hidden="true" style="width:30px;height:30px;color:var(--sb-sage-2)"><use href="#glifo-bee"/></svg>
+          <b>SouLBee</b>
+        </span>
+        <p>
+          Experiências sensoriais, terroir e curadoria de méis de abelhas
+          nativas. Uma iniciativa de Camilla Zanotti Gallon.
+        </p>
+      </div>
+      <div class="ft-col">
+        <h4>Experiências</h4>
+        <ul>
+          <li><a href="#ofertas">Degustação guiada</a></li>
+          <li><a href="#ofertas">Harmonização</a></li>
+          <li><a href="#ofertas">Curadoria sensorial</a></li>
+          <li><a href="#ofertas">Concursos</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Ecossistema</h4>
+        <ul>
+          <li><a href="index.html">Camilla / ZG</a></li>
+          <li><a href="meliponicultura.html">Meliponicultura</a></li>
+          <li><a href="meliponicultura.html#colonias">Colônias</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="contato.html">Formulário</a></li>
+          <li><a href="https://instagram.com/soulbee.o" target="_blank" rel="noopener noreferrer">@soulbee.o</a></li>
+          <li><span class="ph">[WhatsApp]</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-legal">
+      <p>Camilla Zanotti Gallon é sommelière de méis formada pelo Instituto 4e.</p>
+      <p>© 2026 ZG Biodiversidade Aplicada Ltda. · <span class="ph">[CNPJ]</span></p>
+    </div>
+  </div>
+</footer>
+
+<noscript>
+  <div class="aviso mono-caps">
+    Alguns efeitos precisam de JavaScript, mas todo o conteúdo desta página
+    está disponível sem ele.
+  </div>
+</noscript>
+
+</div><!-- /#site -->
+<script src="js/site.js"></script>
+</body>
+</html>

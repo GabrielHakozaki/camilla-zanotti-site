@@ -1,0 +1,54 @@
+# ============================================================
+# O REPOSITÓRIO É PÚBLICO. Por isso a lista é invertida:
+# tudo fica de fora por padrão e só o site entra.
+#
+# Assim, qualquer arquivo novo que cair nesta pasta — print de
+# conversa, documento de estratégia, foto bruta — fica fora sem
+# ninguém precisar lembrar de excluir.
+#
+# Conferir antes de cada push:  git status --porcelain
+# ============================================================
+*
+
+# --- páginas ---
+!index.html
+!experiencias.html
+!meliponicultura.html
+!contato.html
+
+# --- raiz ---
+!robots.txt
+!README.md
+!.gitignore
+
+# --- estilos e script ---
+!css/
+!css/site.css
+!js/
+!js/site.js
+
+# --- só as cinco imagens em uso ---
+!assets/
+!assets/produto-1.jpg
+!assets/produto-4.jpg
+!assets/produto-5.jpg
+!assets/produto-8.jpg
+!assets/produto-9.jpg
+
+# --- deploy ---
+!.github/
+!.github/workflows/
+!.github/workflows/pages.yml
+
+# ============================================================
+# Deliberadamente FORA (não remova as linhas acima achando que
+# isto aqui basta — o `*` é que garante):
+#   ARQUITETURA.md / .pdf      estratégia comercial da cliente
+#   PENDENCIAS.md              dados internos da marca
+#   GUIA-MOCKUP.md / .pdf      documento de trabalho
+#   WhatsApp Image *.jpeg      prints de conversa e do Instagram
+#   Imagem do Codex *.png      originais de 2 MB
+#   mockup-v1-soulbee.html     versão anterior
+#   tools/                     ferramentas internas
+#   .claude/                   servidor local de desenvolvimento
+# ============================================================

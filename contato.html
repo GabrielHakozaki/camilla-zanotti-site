@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Falar com Camilla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Jost:ital,wght@0,300..500;1,400&display=swap">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<!-- ============================================================
+     == SB:CONTATO == o ponto onde as três portas se encontram
+     ============================================================
+     O formulário JÁ SABE de onde a pessoa veio: cada CTA do site
+     chega aqui com ?oferta=slug, e o JS transforma isso em um
+     bloco de contexto visível + campo preenchido. Assim a
+     mensagem nunca chega sem assunto.
+     ============================================================ -->
+
+<div id="site" lang="pt-BR" data-marca="zg">
+
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<div class="aviso mono-caps">
+  Mockup para aprovação · o formulário ainda não envia ·
+  trechos entre <b>[colchetes]</b> aguardam informação
+</div>
+
+<span class="sentinela" id="sentinela" aria-hidden="true"></span>
+
+<header class="hdr" id="hdr">
+  <div class="container hdr-in">
+    <a class="wm" href="index.html" aria-label="Camilla Zanotti Gallon, início">
+      <span class="wm-sig" aria-hidden="true">ZG</span>
+      <span class="wm-txt">
+        <b>Camilla Zanotti Gallon</b>
+        <span>ZG Biodiversidade Aplicada</span>
+      </span>
+    </a>
+    <nav class="hdr-nav" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="experiencias.html">Experiências</a>
+      <a href="meliponicultura.html">Meliponicultura</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">
+      Menu <span class="burger-x" aria-hidden="true"></span>
+    </button>
+  </div>
+  <span class="hdr-fio" aria-hidden="true"></span>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <button class="menu-fechar" id="menu-fechar">Fechar</button>
+  <a href="index.html">Início</a>
+  <a href="experiencias.html">Experiências</a>
+  <a href="meliponicultura.html">Meliponicultura</a>
+  <a href="contato.html">Contato</a>
+</div>
+
+<main id="conteudo">
+
+<section class="sec band-page">
+  <div class="container">
+    <div class="g12" style="row-gap:var(--s-8)">
+
+      <div style="grid-column:1 / span 6">
+        <span class="eyebrow">Contato</span>
+        <h1 style="margin-top:var(--s-4)">Vamos conversar.</h1>
+        <p class="lead" style="margin-top:var(--s-5)">
+          Projeto, degustação, formação ou colônias — conte o que você precisa e
+          eu volto com a proposta.
+        </p>
+
+        <!-- preenchido pelo JS a partir de ?oferta= -->
+        <div class="contexto" id="contexto" hidden>
+          <span class="mono-caps">Assunto</span>
+          <b id="contexto-nome"></b>
+        </div>
+
+        <form class="form" data-mock novalidate style="margin-top:var(--s-6)">
+          <div class="campo">
+            <label for="ct-nome">Nome</label>
+            <input id="ct-nome" name="nome" type="text" autocomplete="name" placeholder="Como devo te chamar">
+          </div>
+          <div class="form-2">
+            <div class="campo">
+              <label for="ct-email">E-mail</label>
+              <input id="ct-email" name="email" type="email" autocomplete="email" placeholder="seu@email.com">
+            </div>
+            <div class="campo">
+              <label for="ct-fone">WhatsApp</label>
+              <input id="ct-fone" name="telefone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000">
+            </div>
+          </div>
+          <div class="campo">
+            <label for="ct-org">Empresa ou instituição</label>
+            <input id="ct-org" name="organizacao" type="text" placeholder="Opcional">
+          </div>
+          <div class="campo">
+            <label for="campo-assunto">Sobre o que</label>
+            <select id="campo-assunto" name="assunto">
+              <option value="">Selecione</option>
+              <option>Degustação guiada para equipes e eventos</option>
+              <option>Harmonização de méis</option>
+              <option>Curadoria e análise sensorial de méis</option>
+              <option>Participação como jurada em concursos</option>
+              <option>Formação em meliponicultura — introdução</option>
+              <option>Formação em meliponicultura — manejo</option>
+              <option>Formação em análise sensorial de méis</option>
+              <option>Lista de espera — colônias de abelhas nativas</option>
+              <option>Projetos e consultoria técnica</option>
+              <option>Outro assunto</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="ct-msg">Mensagem</label>
+            <textarea id="ct-msg" name="mensagem"
+              placeholder="Formato que você imagina, data, número de pessoas, prazo..."></textarea>
+          </div>
+          <input type="hidden" id="campo-oferta" name="oferta" value="">
+          <button class="btn btn-1" type="submit">Enviar</button>
+          <p class="form-aviso nota-legal mono-caps" hidden>
+            Este é um mockup — o formulário ainda não envia. No site publicado,
+            esta mensagem chegaria por e-mail e WhatsApp, já com o assunto
+            preenchido.
+          </p>
+        </form>
+      </div>
+
+      <div style="grid-column:8 / span 5">
+        <h3>Por onde preferir</h3>
+        <dl class="canais" style="flex-direction:column;gap:var(--s-4);border-top:0;padding-top:var(--s-4);margin-top:var(--s-4)">
+          <div class="canal">
+            <dt>Instagram</dt>
+            <dd><a class="lnk lnk-ac" href="https://instagram.com/soulbee.o"
+                   target="_blank" rel="noopener noreferrer">@soulbee.o</a></dd>
+          </div>
+          <div class="canal">
+            <dt>WhatsApp</dt>
+            <dd><span class="chip-ph">[preencher: número]</span></dd>
+          </div>
+          <div class="canal">
+            <dt>E-mail</dt>
+            <dd><span class="chip-ph">[preencher: e-mail]</span></dd>
+          </div>
+          <div class="canal">
+            <dt>Atendimento</dt>
+            <dd><span class="chip-ph">[preencher: cidade/estado e regiões]</span></dd>
+          </div>
+        </dl>
+
+        <div class="nota-legal" style="margin-top:var(--s-7)">
+          <p>
+            <strong>Resposta.</strong>
+            <span class="ph">[preencher: prazo t&iacute;pico de retorno]</span>
+          </p>
+          <p>
+            Para colônias, o pedido entra na lista de espera — a venda depende da
+            regularização do meliponário e da região de ocorrência natural da
+            espécie. <a class="lnk lnk-ac" href="meliponicultura.html#colonias">Entenda</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft band-dark-2">
+  <div class="container">
+    <div class="g12 ft-grid">
+      <div class="ft-marca">
+        <span class="wm">
+          <span class="wm-sig" aria-hidden="true">ZG</span>
+          <span class="wm-txt">
+            <b>Camilla Zanotti Gallon</b>
+            <span>ZG Biodiversidade Aplicada</span>
+          </span>
+        </span>
+        <p>Biodiversidade, ciência e desenvolvimento rural.</p>
+      </div>
+      <div class="ft-col">
+        <h4>Atuação</h4>
+        <ul>
+          <li><a href="index.html#frentes">Frentes</a></li>
+          <li><a href="index.html#educacao">Educação</a></li>
+          <li><a href="index.html#trajetoria">Trajetória</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Iniciativas</h4>
+        <ul>
+          <li><a href="experiencias.html">SouLBee</a></li>
+          <li><a href="meliponicultura.html">Vale do Canaã</a></li>
+          <li><a href="meliponicultura.html#colonias">Colônias</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://instagram.com/soulbee.o" target="_blank" rel="noopener noreferrer">@soulbee.o</a></li>
+          <li><span class="ph">[WhatsApp]</span></li>
+          <li><span class="ph">[e-mail]</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-legal">
+      <p>© 2026 ZG Biodiversidade Aplicada Ltda. · <span class="ph">[CNPJ]</span> · <span class="ph">[cidade, estado]</span></p>
+    </div>
+  </div>
+</footer>
+
+<noscript>
+  <div class="aviso mono-caps">
+    Sem JavaScript o formulário não preenche o assunto automaticamente —
+    basta selecioná-lo na lista.
+  </div>
+</noscript>
+
+</div><!-- /#site -->
+<script src="js/site.js"></script>
+</body>
+</html>

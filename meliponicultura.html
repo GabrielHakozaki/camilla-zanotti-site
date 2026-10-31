@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Meliponicultura — formação e colônias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Jost:ital,wght@0,300..500;1,400&display=swap">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<!-- ============================================================
+     == SB:MELIPONICULTURA == a terceira porta
+     ============================================================
+     Atravessa duas frentes de propósito: a FORMAÇÃO é
+     ZG/Educação e as COLÔNIAS são Vale do Canaã. Para a Camilla
+     são duas coisas; para o meliponicultor é um destino só —
+     então as duas moram aqui.
+
+     Colônias entram como LISTA DE ESPERA, não loja: a CONAMA
+     496/2020 limita a criação à região de ocorrência natural da
+     espécie, e o meliponário ainda está se regularizando.
+     ============================================================ -->
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <clipPath id="clip-abd">
+      <path d="M60 70 C78 70 83 88 81 106 C79 128 70 150 60 152 C50 150 41 128 39 106 C37 88 42 70 60 70 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- A ABELHA PARAMÉTRICA — vista dorsal, prancha entomológica.
+       Olhos compostos hachurados: sem pupila, sem brilho, sem
+       boca. É essa linha que separa prancha de mascote.
+       Por instância: --tr traço · --band tom das faixas
+                      --wx largura do corpo · --b1..--b4 faixas -->
+  <g id="abelha-art" fill="none" stroke="currentColor"
+     stroke-width="var(--tr,1.25)" stroke-linecap="round" stroke-linejoin="round"
+     vector-effect="non-scaling-stroke">
+    <g id="asas-esq">
+      <path d="M48 46 C31 35 9 41 4 57 C1 70 15 79 31 75 C43 72 50 60 48 46 Z"/>
+      <path d="M44 50 C34 48 22 52 15 60" opacity=".6"/>
+      <path d="M45 56 C35 57 24 62 18 69" opacity=".6"/>
+      <path d="M46 62 C38 65 30 69 25 74" opacity=".6"/>
+      <path d="M46 64 C33 64 20 70 17 79 C16 87 27 91 37 86 C45 82 48 73 46 64 Z"/>
+      <path d="M42 70 C34 71 26 76 22 82" opacity=".55"/>
+    </g>
+    <use href="#asas-esq" transform="translate(120,0) scale(-1,1)"/>
+    <g id="pernas-esq">
+      <path d="M46 46 L31 41 L23 47"/>
+      <path d="M44 57 L27 59 L17 67"/>
+      <path d="M46 67 L31 76 L24 87"/>
+    </g>
+    <use href="#pernas-esq" transform="translate(120,0) scale(-1,1)"/>
+    <g style="transform:scaleX(var(--wx,1));transform-origin:60px 90px">
+      <path d="M60 70 C78 70 83 88 81 106 C79 128 70 150 60 152 C50 150 41 128 39 106 C37 88 42 70 60 70 Z"/>
+      <g clip-path="url(#clip-abd)" stroke="none">
+        <rect x="30" y="82"  width="60" height="9" fill="var(--band,#D99B2B)" opacity="var(--b1,.85)"/>
+        <rect x="30" y="99"  width="60" height="9" fill="var(--band,#D99B2B)" opacity="var(--b2,.85)"/>
+        <rect x="30" y="116" width="60" height="8" fill="var(--band,#D99B2B)" opacity="var(--b3,.85)"/>
+        <rect x="30" y="132" width="60" height="7" fill="var(--band,#D99B2B)" opacity="var(--b4,.85)"/>
+      </g>
+      <ellipse cx="60" cy="56" rx="18" ry="17"/>
+      <g class="pelo" style="--p:0"><path d="M50 44 L46 38"/><path d="M56 42 L54 35"/></g>
+      <g class="pelo" style="--p:1"><path d="M64 42 L66 35"/><path d="M70 44 L74 38"/></g>
+      <g class="pelo" style="--p:2"><path d="M47 52 L41 49"/><path d="M73 52 L79 49"/></g>
+      <g class="pelo" style="--p:3"><path d="M49 62 L43 65"/><path d="M71 62 L77 65"/></g>
+      <ellipse cx="60" cy="26" rx="15" ry="13"/>
+      <ellipse cx="50" cy="24" rx="5" ry="8"/>
+      <ellipse cx="70" cy="24" rx="5" ry="8"/>
+      <g opacity=".65">
+        <path d="M46 20 L54 20"/><path d="M45.4 24 L54.6 24"/><path d="M46 28 L54 28"/>
+        <path d="M66 20 L74 20"/><path d="M65.4 24 L74.6 24"/><path d="M66 28 L74 28"/>
+      </g>
+      <path d="M53 16 C49 10 46 6 42 3"/>
+      <path d="M67 16 C71 10 74 6 78 3"/>
+    </g>
+  </g>
+
+  <symbol id="g-colonia" viewBox="0 0 56 56" fill="none" stroke="currentColor"
+          stroke-width="1.25" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <path d="M10 20 L46 20 L46 46 L10 46 Z"/>
+    <path d="M10 20 L28 8 L46 20" /><path d="M10 30 L46 30 M10 38 L46 38" opacity=".45"/>
+    <circle cx="28" cy="34" r="3.2"/>
+  </symbol>
+  <symbol id="g-curso" viewBox="0 0 56 56" fill="none" stroke="currentColor"
+          stroke-width="1.25" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <path d="M6 16 L28 6 L50 16 L28 26 Z"/>
+    <path d="M14 20 L14 36 C14 36 20 42 28 42 C36 42 42 36 42 36 L42 20"/>
+    <path d="M50 16 L50 32" opacity=".55"/>
+  </symbol>
+</svg>
+
+<div id="site" lang="pt-BR" data-marca="vale">
+
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<div class="aviso mono-caps">
+  Mockup para aprovação · textos e imagens sujeitos a revisão ·
+  trechos entre <b>[colchetes]</b> aguardam informação
+</div>
+
+<span class="sentinela" id="sentinela" aria-hidden="true"></span>
+
+<header class="hdr" id="hdr">
+  <div class="container hdr-in">
+    <a class="wm" href="index.html" aria-label="Meliponário Vale do Canaã, início">
+      <span class="wm-sig" aria-hidden="true">VC</span>
+      <span class="wm-txt">
+        <b>Vale do Canaã</b>
+        <span>Meliponário · Camilla Zanotti Gallon</span>
+      </span>
+    </a>
+    <nav class="hdr-nav" aria-label="Navegação principal">
+      <a href="#formacao">Formação</a>
+      <a href="#colonias">Colônias</a>
+      <a href="#abelhas">Abelhas</a>
+      <a href="experiencias.html">Experiências</a>
+      <a href="index.html">Camilla</a>
+    </nav>
+    <a class="btn btn-1 hdr-cta" href="#colonias"
+       style="min-height:40px;padding:0 var(--s-5)">Lista de espera</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">
+      Menu <span class="burger-x" aria-hidden="true"></span>
+    </button>
+  </div>
+  <span class="hdr-fio" aria-hidden="true"></span>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <button class="menu-fechar" id="menu-fechar">Fechar</button>
+  <a href="#formacao">Formação</a>
+  <a href="#colonias">Colônias</a>
+  <a href="#abelhas">Abelhas</a>
+  <a href="experiencias.html">Experiências</a>
+  <a href="index.html">Camilla</a>
+</div>
+
+<main id="conteudo">
+
+<!-- == SB:HERO == -->
+<section class="hero band-dark">
+  <div class="container">
+    <div class="g12" style="align-items:end;row-gap:var(--s-6)">
+      <div style="grid-column:1 / span 7">
+        <span class="eyebrow">Meliponário Vale do Canaã</span>
+        <h1 style="font-size:var(--fs-hero)">Criar abelha nativa<br>se aprende fazendo.</h1>
+        <p class="lead">
+          Formação em meliponicultura e manejo com quem pesquisa essas abelhas —
+          e, em breve, colônias do próprio meliponário.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-1" href="#formacao">Ver as formações</a>
+          <a class="btn btn-2" href="#colonias">Entrar na lista de colônias</a>
+        </div>
+      </div>
+      <div style="grid-column:9 / span 4" class="mono" aria-hidden="true">
+        <svg viewBox="0 0 120 170" style="width:120px;color:var(--tx-on-dark);--band:var(--sb-sage-2);--tr:1.1;opacity:.5">
+          <use href="#abelha-art"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="divisor" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0 H1440 V48 C1180 68 1010 52 760 62 C520 72 300 80 0 62 Z" fill="#2A2E20"/>
+  <g fill="#2A2E20">
+    <g class="gota" style="--dl:400ms"><rect x="432" y="18" width="4" height="46"/><ellipse cx="434" cy="66" rx="7.5" ry="10"/></g>
+  </g>
+</svg>
+
+<!-- ============================================================
+     == SB:FORMACAO ==
+     Esta é a oferta que NÃO depende da regularização — dá para
+     vender hoje, enquanto o meliponário comercial se formaliza.
+     Por isso ela vem antes das colônias na página.
+     ============================================================ -->
+<section class="sec band-page" id="formacao">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:var(--s-8);max-width:62ch">
+      <span class="eyebrow">ZG · Educação &amp; Conhecimento</span>
+      <h2 style="margin-top:var(--s-4)">Formação em meliponicultura</h2>
+      <p class="lead" style="margin-top:var(--s-4)">
+        Um curso de meliponicultura dado por quem <em>pesquisa</em> abelha nativa
+        não é o mesmo curso que o do vizinho que cria há dez anos.
+        <span class="ph">[preencher: carga hor&aacute;ria, formato e n&iacute;veis]</span>
+      </p>
+    </div>
+
+    <div class="ofertas">
+
+      <article class="oferta reveal" data-i="0">
+        <div class="oferta-topo">
+          <span class="oferta-tag">01 · introdução</span>
+          <h3>Primeiros passos em meliponicultura</h3>
+          <p class="oferta-sub">
+            Para quem quer começar a criar abelhas sem ferrão com base técnica —
+            e sem perder colônia por erro evitável.
+          </p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Para quem</dt><dd>Iniciantes, proprietários rurais, quem recebeu uma colônia e não sabe seguir</dd></div>
+            <div><dt>Você recebe</dt><dd><ul>
+              <li>Biologia das abelhas sem ferrão aplicada ao manejo</li>
+              <li>Escolha de espécie por região de ocorrência natural</li>
+              <li>Instalação, caixa racional e primeiros cuidados</li>
+              <li><span class="ph">[preencher: material de apoio]</span></li>
+            </ul></dd></div>
+            <div><dt>Formato</dt><dd><span class="ph">[presencial ou online · nº de vagas]</span></dd></div>
+            <div><dt>Carga horária</dt><dd><span class="ph">[preencher]</span></dd></div>
+          </dl>
+          <div class="oferta-preco"><b>R$ <span class="ph">[valor]</span></b><small>por participante</small></div>
+          <a class="btn btn-1" href="contato.html?oferta=formacao-inicial">Quero participar</a>
+        </div>
+      </article>
+
+      <article class="oferta reveal" data-i="1">
+        <div class="oferta-topo">
+          <span class="oferta-tag">02 · manejo</span>
+          <h3>Manejo, multiplicação e produção</h3>
+          <p class="oferta-sub">
+            Para quem já cria e quer multiplicar colônias com segurança e colher
+            sem comprometer o ninho.
+          </p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Para quem</dt><dd>Meliponicultores em atividade e produtores rurais</dd></div>
+            <div><dt>Você recebe</dt><dd><ul>
+              <li>Multiplicação de colônias e divisão</li>
+              <li>Colheita sem comprometer o ninho</li>
+              <li>Conservação do mel de abelha nativa</li>
+              <li>Caminho da regularização do meliponário</li>
+            </ul></dd></div>
+            <div><dt>Formato</dt><dd><span class="ph">[presencial com prática no meliponário]</span></dd></div>
+            <div><dt>Carga horária</dt><dd><span class="ph">[preencher]</span></dd></div>
+          </dl>
+          <div class="oferta-preco"><b>R$ <span class="ph">[valor]</span></b><small>por participante</small></div>
+          <a class="btn btn-1" href="contato.html?oferta=formacao-manejo">Quero participar</a>
+        </div>
+      </article>
+
+      <article class="oferta reveal" data-i="2">
+        <div class="oferta-topo">
+          <span class="oferta-tag">03 · sensorial</span>
+          <h3>Análise sensorial de méis</h3>
+          <p class="oferta-sub">
+            O mel que você produz tem características próprias. Este curso ensina
+            a reconhecê-las, descrevê-las e usá-las a favor do seu produto.
+          </p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Para quem</dt><dd>Produtores, cooperativas, times de varejo e de restaurante</dd></div>
+            <div><dt>Você recebe</dt><dd><ul>
+              <li>Vocabulário sensorial aplicado a méis</li>
+              <li>Prova dirigida comparando espécies e floradas</li>
+              <li>Como descrever o seu mel em rótulo e em venda</li>
+            </ul></dd></div>
+            <div><dt>Formato</dt><dd><span class="ph">[preencher]</span></dd></div>
+          </dl>
+          <div class="oferta-preco"><b>R$ <span class="ph">[valor]</span></b><small>por participante</small></div>
+          <a class="btn btn-1" href="contato.html?oferta=formacao-sensorial">Quero participar</a>
+        </div>
+      </article>
+
+      <article class="oferta reveal" data-i="3" style="background:var(--sf-sunken)">
+        <div class="oferta-topo">
+          <span class="oferta-tag">in company</span>
+          <h3>Formação para equipes e instituições</h3>
+          <p class="oferta-sub">
+            Capacitação desenhada para a sua operação: cooperativa, assistência
+            técnica, escola, time de varejo ou de cozinha.
+          </p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Para quem</dt><dd>Cooperativas, instituições de ensino, empresas, órgãos públicos</dd></div>
+            <div><dt>Você recebe</dt><dd>Programa sob medida, material técnico e condução por doutora em pesquisa aplicada</dd></div>
+          </dl>
+          <div class="oferta-preco"><b><span class="ph">[sob proposta]</span></b></div>
+          <a class="btn btn-2" href="contato.html?oferta=consultoria">Pedir proposta</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     == SB:COLONIAS == lista de espera, NÃO loja
+     ============================================================ -->
+<section class="sec band-sunken" id="colonias">
+  <div class="container">
+    <div class="g12" style="row-gap:var(--s-7)">
+      <div style="grid-column:1 / span 6" class="reveal">
+        <span class="eyebrow">Meliponário Vale do Canaã</span>
+        <h2 style="margin-top:var(--s-4)">Colônias de abelhas nativas</h2>
+        <p class="lead" style="margin-top:var(--s-4)">
+          O meliponário está em processo de se tornar comercial. Enquanto a
+          regularização corre, a lista de espera garante seu lugar — e me ajuda
+          a saber para onde a demanda está.
+        </p>
+
+        <svg viewBox="0 0 56 56" aria-hidden="true"
+             style="width:52px;height:52px;color:var(--ac-graf);margin:var(--s-6) 0"><use href="#g-colonia"/></svg>
+
+        <div class="nota-legal">
+          <p>
+            <strong>Por que ainda não há preço aqui.</strong> A criação de
+            abelhas sem ferrão é regulada: a Resolução <strong>CONAMA
+            496/2020</strong> disciplina o uso e o manejo, o estabelecimento
+            comercial precisa de inscrição no <strong>CTF/APP (IBAMA)</strong> e
+            os meliponários são registrados na plataforma nacional da Resolução
+            487/2018.
+          </p>
+          <p>
+            Mais importante para você: <strong>a criação é limitada à região de
+            ocorrência natural da espécie</strong>, conforme o Catálogo Nacional.
+            Ou seja, nem toda espécie pode ir para qualquer estado — por isso a
+            lista pergunta onde você está.
+          </p>
+          <p class="mono-caps" style="margin-top:var(--s-4)">
+            As normas estaduais variam. Isto é sinalização de onde olhar, não
+            parecer jurídico.
+          </p>
+        </div>
+      </div>
+
+      <div style="grid-column:8 / span 5" class="reveal" data-i="1">
+        <h3 style="margin-bottom:var(--s-5)">Entrar na lista de espera</h3>
+        <form class="form" data-mock novalidate>
+          <div class="campo">
+            <label for="col-nome">Nome</label>
+            <input id="col-nome" name="nome" type="text" autocomplete="name" placeholder="Como devo te chamar">
+          </div>
+          <div class="form-2">
+            <div class="campo">
+              <label for="col-contato">WhatsApp ou e-mail</label>
+              <input id="col-contato" name="contato" type="text" placeholder="Para eu te avisar">
+            </div>
+            <div class="campo">
+              <label for="col-uf">Estado</label>
+              <select id="col-uf" name="uf">
+                <option value="">Selecione</option>
+                <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                <option>SP</option><option>SE</option><option>TO</option>
+              </select>
+            </div>
+          </div>
+          <p class="campo-nota">
+            O estado define quais espécies posso te atender dentro da região de
+            ocorrência natural.
+          </p>
+          <div class="campo">
+            <label for="col-exp">Você já cria abelhas sem ferrão?</label>
+            <select id="col-exp" name="experiencia">
+              <option value="">Selecione</option>
+              <option>Ainda não — quero começar</option>
+              <option>Sim, tenho poucas colônias</option>
+              <option>Sim, tenho meliponário em atividade</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="col-msg">O que você procura</label>
+            <textarea id="col-msg" name="mensagem" placeholder="Espécie de interesse, quantidade, prazo..."></textarea>
+          </div>
+          <button class="btn btn-1" type="submit">Entrar na lista</button>
+          <p class="form-aviso nota-legal mono-caps" hidden>
+            Este é um mockup — o formulário ainda não envia. No site publicado,
+            esta mensagem chegaria por e-mail e WhatsApp.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     == SB:ABELHAS == origem produtiva, não marca sensorial
+     As fichas moram aqui porque espécie é ORIGEM PRODUTIVA. Em
+     /experiencias fica o vocabulário sensorial; aqui, as abelhas.
+     Taxonomia conferida em fonte externa — não a dos rótulos.
+     ============================================================ -->
+<section class="sec band-page" id="abelhas">
+  <div class="container">
+    <div class="g12" style="row-gap:var(--s-6);margin-bottom:var(--s-7)">
+      <div style="grid-column:1 / span 6" class="reveal">
+        <span class="eyebrow">Biodiversidade</span>
+        <h2 style="margin-top:var(--s-4)">As abelhas que<br>você nunca viu de perto.</h2>
+      </div>
+      <div class="reveal" data-i="1" style="grid-column:8 / span 5;align-self:end">
+        <p class="lead">
+          Meliponíneos: abelhas sociais nativas cujo aparelho ferroador é
+          atrofiado — por isso “sem ferrão”. Cada espécie, em cada flora, produz
+          um mel diferente.
+        </p>
+      </div>
+    </div>
+
+    <div class="escala mono-caps reveal">
+      <span>porte relativo aproximado</span>
+      <i aria-hidden="true"></i>
+      <span>a confirmar</span>
+    </div>
+
+    <div class="especies">
+
+      <article class="esp reveal" data-i="0">
+        <div class="esp-fig">
+          <svg class="esp-bee" viewBox="0 0 120 170" aria-hidden="true"
+               style="--esc:.5;--esc0:.62;--band:#D99B2B;--wx:.8;--b3:0;--b4:0"><use href="#abelha-art"/></svg>
+        </div>
+        <div class="esp-corpo">
+          <h3 class="esp-nome">Jataí</h3>
+          <span class="esp-sci"><i class="sci">Tetragonisca angustula</i></span>
+          <span class="esp-tax mono-caps">Tribo Meliponini · Família Apidae</span>
+          <dl class="esp-dados">
+            <div><dt>Outros nomes</dt><dd>mariola · abelha-ouro</dd></div>
+            <div><dt>Porte</dt><dd>~4–5 mm</dd></div>
+            <div><dt>Distribuição</dt><dd>ampla, do Rio Grande do Sul ao México</dd></div>
+            <div><dt>Nota</dt><dd>A menor do conjunto, e a mais conhecida: constrói a entrada do ninho como um tubo de cera.</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="esp reveal" data-i="1">
+        <div class="esp-fig">
+          <svg class="esp-bee" viewBox="0 0 120 170" aria-hidden="true"
+               style="--esc:1;--esc0:.62;--band:#C6A15B;--wx:1.06;--b3:.85;--b4:.7"><use href="#abelha-art"/></svg>
+        </div>
+        <div class="esp-corpo">
+          <h3 class="esp-nome">Uruçu</h3>
+          <span class="esp-sci"><i class="sci">Melipona scutellaris</i></span>
+          <span class="esp-tax mono-caps">Tribo Meliponini · Família Apidae</span>
+          <dl class="esp-dados">
+            <div><dt>Outros nomes</dt><dd>uruçu-verdadeira · uruçu-nordestina</dd></div>
+            <div><dt>Porte</dt><dd><span class="ph">[a confirmar]</span></dd></div>
+            <div><dt>Distribuição</dt><dd>Nordeste</dd></div>
+            <div><dt>Mel</dt><dd><span class="ph">[descritor sensorial — Camilla]</span></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="esp reveal" data-i="2">
+        <div class="esp-fig">
+          <svg class="esp-bee" viewBox="0 0 120 170" aria-hidden="true"
+               style="--esc:.92;--esc0:.62;--band:#B08A4E;--wx:1.04;--b3:.85;--b4:.75"><use href="#abelha-art"/></svg>
+        </div>
+        <div class="esp-corpo">
+          <h3 class="esp-nome">Mandaçaia</h3>
+          <span class="esp-sci"><i class="sci">Melipona quadrifasciata</i></span>
+          <span class="esp-tax mono-caps">Tribo Meliponini · Família Apidae</span>
+          <dl class="esp-dados">
+            <div><dt>Atenção</dt><dd><span class="ph">[confirmar: ou M. mandacaia, que é outra espécie]</span></dd></div>
+            <div><dt>Distribuição</dt><dd>Sul e Sudeste, costa atlântica</dd></div>
+            <div><dt>Nota</dt><dd>O nome significa “bela guarda”: há sempre uma abelha postada na entrada estreita do ninho. O epíteto <i class="sci">quadrifasciata</i> vem das quatro faixas do abdômen.</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="esp reveal" data-i="3">
+        <div class="esp-fig">
+          <svg class="esp-bee" viewBox="0 0 120 170" aria-hidden="true"
+               style="--esc:.98;--esc0:.62;--band:#8A6B41;--wx:1.05;--b3:.8;--b4:.65"><use href="#abelha-art"/></svg>
+        </div>
+        <div class="esp-corpo">
+          <h3 class="esp-nome">Tiúba</h3>
+          <span class="esp-sci"><i class="sci">Melipona fasciculata</i></span>
+          <span class="esp-tax mono-caps">Tribo Meliponini · Família Apidae</span>
+          <dl class="esp-dados">
+            <div><dt>Outros nomes</dt><dd>uruçu-cinzenta</dd></div>
+            <div><dt>Distribuição</dt><dd>Maranhão e Pará</dd></div>
+            <div><dt>Mel</dt><dd><span class="ph">[descritor sensorial — Camilla]</span></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="esp reveal" data-i="4">
+        <div class="esp-fig">
+          <svg class="esp-bee" viewBox="0 0 120 170" aria-hidden="true"
+               style="--esc:.82;--esc0:.62;--band:#6B4A2A;--wx:1;--b3:.8;--b4:.6"><use href="#abelha-art"/></svg>
+        </div>
+        <div class="esp-corpo">
+          <h3 class="esp-nome">Jandaíra</h3>
+          <span class="esp-sci"><i class="sci">Melipona subnitida</i></span>
+          <span class="esp-tax mono-caps">Tribo Meliponini · Família Apidae</span>
+          <dl class="esp-dados">
+            <div><dt>Distribuição</dt><dd>endêmica da Caatinga</dd></div>
+            <div><dt>Nota</dt><dd>Meliponínea típica do sertão, endêmica das caatingas nordestinas.</dd></div>
+            <div><dt>Mel</dt><dd><span class="ph">[descritor sensorial — Camilla]</span></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="esp reveal" data-i="5">
+        <div class="esp-fig">
+          <svg class="esp-bee" viewBox="0 0 120 170" aria-hidden="true"
+               style="--esc:.88;--esc0:.62;--band:#8B8F5E;--wx:1.02;--b3:.8;--b4:.6"><use href="#abelha-art"/></svg>
+        </div>
+        <div class="esp-corpo">
+          <h3 class="esp-nome">Guaraipo</h3>
+          <span class="esp-sci"><i class="sci">Melipona bicolor</i></span>
+          <span class="esp-tax mono-caps">Tribo Meliponini · Família Apidae</span>
+          <dl class="esp-dados">
+            <div><dt>Outros nomes</dt><dd>guarupu · pé-de-pau</dd></div>
+            <div><dt>Nota</dt><dd>Apresenta poliginia: mais de uma rainha por ninho, o que é raro entre as abelhas sem ferrão.</dd></div>
+            <div><dt>Mel</dt><dd><span class="ph">[descritor sensorial — Camilla]</span></dd></div>
+          </dl>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="nota-legal reveal" style="margin-top:var(--s-7)">
+      <p>
+        <strong>Estas são espécies nativas brasileiras criadas em
+        meliponicultura, não necessariamente a linha do Vale do Canaã.</strong>
+        Os pareamentos de nome popular e nome científico foram conferidos em
+        fonte externa. O site imprime só o nome da espécie, nunca autor-e-ano,
+        porque as fontes divergem.
+      </p>
+      <p class="mono-caps">
+        <span class="ph">[confirmar: quais esp&eacute;cies o Vale do Cana&atilde; realmente trabalha]</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- == SB:CTA == -->
+<section class="sec band-dark">
+  <div class="container" style="text-align:center;max-width:700px">
+    <span class="eyebrow reveal">Próximo passo</span>
+    <h2 class="reveal" data-i="1" style="margin-top:var(--s-4)">Começar pelo curso, enquanto as colônias vêm.</h2>
+    <p class="lead reveal" data-i="2" style="margin:var(--s-4) auto 0">
+      A formação não depende da regularização do meliponário — essa você já pode
+      fazer agora.
+    </p>
+    <div class="btn-row reveal" data-i="3" style="justify-content:center;margin-top:var(--s-7)">
+      <a class="btn btn-1" href="contato.html?oferta=formacao-inicial">Quero fazer o curso</a>
+      <a class="btn btn-2" href="#colonias">Entrar na lista de colônias</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft band-dark-2">
+  <div class="container">
+    <div class="g12 ft-grid">
+      <div class="ft-marca">
+        <span class="wm">
+          <span class="wm-sig" aria-hidden="true">VC</span>
+          <span class="wm-txt">
+            <b>Meliponário Vale do Canaã</b>
+            <span>Camilla Zanotti Gallon</span>
+          </span>
+        </span>
+        <p>Origem produtiva: criação e manejo de abelhas nativas, produção de méis e meliprodutos.</p>
+      </div>
+      <div class="ft-col">
+        <h4>Formação</h4>
+        <ul>
+          <li><a href="#formacao">Primeiros passos</a></li>
+          <li><a href="#formacao">Manejo e multiplicação</a></li>
+          <li><a href="#formacao">Análise sensorial</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Ecossistema</h4>
+        <ul>
+          <li><a href="index.html">Camilla</a></li>
+          <li><a href="experiencias.html">SouLBee</a></li>
+          <li><a href="#abelhas">Abelhas</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="contato.html">Formulário</a></li>
+          <li><a href="https://instagram.com/soulbee.o" target="_blank" rel="noopener noreferrer">@soulbee.o</a></li>
+          <li><span class="ph">[WhatsApp]</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-legal">
+      <p>Meliponário em processo de regularização comercial. Conteúdo técnico sujeito a revisão.</p>
+      <p>© 2026 ZG Biodiversidade Aplicada Ltda. · <span class="ph">[CNPJ]</span></p>
+    </div>
+  </div>
+</footer>
+
+<noscript>
+  <div class="aviso mono-caps">
+    Alguns efeitos precisam de JavaScript, mas todo o conteúdo desta página
+    está disponível sem ele.
+  </div>
+</noscript>
+
+</div><!-- /#site -->
+<script src="js/site.js"></script>
+</body>
+</html>

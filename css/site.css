@@ -1,0 +1,812 @@
+/* ============================================================
+   SITE CAMILLA ZANOTTI GALLON / ZG BIODIVERSIDADE APLICADA
+   Folha compartilhada por todas as páginas.
+   Índice:  grep -n "== SB:" css/site.css
+   ============================================================
+
+   DUAS MARCAS, UM SISTEMA
+   A diferenciação vem de PALETA, DENSIDADE e ACENTO — não de
+   tipografia. Trocar de fonte entre seções do mesmo site vira
+   bagunça, e é a mesma pessoa por trás das duas.
+
+     [data-marca="zg"]        relatório científico, papel frio,
+                              acento petrol que PODE ser texto
+     [data-marca="soulbee"]   editorial artesanal, creme quente,
+                              âmbar que NUNCA pode ser texto
+
+   Os componentes só usam tokens semânticos (--sf-*, --tx-*,
+   --ac-*). Nenhum componente referencia cor de marca direto, e
+   nenhuma cor existe só dentro de um bloco de tema.
+   ============================================================ */
+
+/* ============================================================
+   == SB:CSS:RESET == à prova de quirks mode
+   A Home é a página principal do artifact e é servida sem
+   doctype (o publicador embrulha), então ela roda em quirks
+   enquanto as outras rodam em standards. Estas regras fazem o
+   layout ser idêntico nos dois modos.
+   ============================================================ */
+*,*::before,*::after{ box-sizing:border-box }
+html,body{ margin:0; padding:0 }
+/* :where() zera a especificidade do seletor. Sem isso o reset
+   tinha peso de ID e vencia toda margem definida por classe. */
+:where(#site) :where(h1,h2,h3,h4,p,ul,ol,dl,dd,figure,blockquote){ margin:0; padding:0 }
+:where(#site) :where(ul,ol){ list-style:none }
+:where(#site) :where(img,svg,video){ display:block; max-width:100% }
+:where(#site) :where(button,input,select,textarea){ font:inherit; color:inherit }
+:where(#site) :where(button){ background:none; border:0; padding:0; cursor:pointer }
+:where(#site) :where(a){ color:inherit; text-decoration:none }
+
+/* ============================================================
+   == SB:CSS:TOKENS ==
+   Tokens vivem em #site, não em :root — no alvo publicado o
+   :root é o <html> do host e carrega data-theme.
+   ============================================================ */
+#site{
+  color-scheme:only light;
+
+  /* --- paleta ZG: relatório científico --- */
+  --zg-paper:#F7F7F4;  --zg-paper-2:#EFEFEA;  --zg-paper-3:#E4E5DE;
+  --zg-ink:#1C2420;    --zg-ink-2:#4A544E;    --zg-ink-3:#6E776F;
+  --zg-accent:#2C5A5B; --zg-accent-2:#3E7A78; --zg-accent-pale:#D7E2E0;
+
+  /* --- paleta SouLBee: editorial artesanal --- */
+  --sb-cream:#F7F3E8;  --sb-cream-2:#EFE8D6;  --sb-cream-3:#FBF9F2;
+  --sb-forest:#2A2E20; --sb-forest-2:#363B29; --sb-forest-3:#1C2016;
+  --sb-sage:#8B8F5E;   --sb-sage-2:#C7CAA6;   --sb-sage-050:#EDEEE0;
+  --sb-amber:#D99B2B;  --sb-amber-2:#B87F1C;  --sb-amber-pale:#F2D79A;
+  --sb-mel:#8A5E12;    /* âmbar legível: 5.0:1 sobre creme */
+  --sb-gold:#C6A15B;   --sb-brown:#6B4A2A;    --sb-frame:#EDE4D2;
+
+  /* --- tipografia (compartilhada pelas duas marcas) --- */
+  --f-display:"Fraunces","Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --f-sans:"Jost",Futura,"Century Gothic","Avenir Next",Avenir,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,monospace;
+
+  --fs-hero:clamp(2.5rem,1.3rem + 5.6vw,5rem);
+  --fs-900:clamp(2rem,1.45rem + 2.6vw,3.25rem);
+  --fs-800:clamp(1.6rem,1.3rem + 1.5vw,2.375rem);
+  --fs-700:clamp(1.375rem,1.2rem + .85vw,1.75rem);
+  --fs-600:clamp(1.1875rem,1.12rem + .4vw,1.4375rem);
+  --fs-lead:clamp(1.0625rem,1rem + .45vw,1.25rem);
+  --fs-400:clamp(1rem,.97rem + .15vw,1.0625rem);
+  --fs-300:.9375rem; --fs-200:.8125rem; --fs-100:.75rem; --fs-mono:.6875rem;
+
+  --lh-tight:1.04; --lh-snug:1.16; --lh-body:1.62;
+  --tr-mega:-.022em; --tr-tight:-.012em;
+  --tr-wide:.08em; --tr-eyebrow:.18em; --tr-marca:.3em;
+
+  /* --- espaço --- */
+  --s-1:.25rem; --s-2:.5rem; --s-3:.75rem; --s-4:1rem;  --s-5:1.5rem;
+  --s-6:2rem;   --s-7:3rem;  --s-8:4rem;   --s-9:6rem;
+  --sec-y:clamp(4rem,8vw,7.5rem);
+  --gut:clamp(1.125rem,4vw,2.5rem);
+  --maxw:1180px; --maxw-txt:62ch; --header-h:68px;
+
+  /* --- formas e sombra --- */
+  --r-1:2px; --r-2:6px; --r-pill:999px;
+  --sh-nav:0 8px 24px rgba(28,36,32,.08);
+
+  /* --- easing e duração --- */
+  --e-out:cubic-bezier(.22,.61,.36,1);
+  --e-inout:cubic-bezier(.65,.05,.36,1);
+  --e-mel:cubic-bezier(.16,.84,.28,1);
+  --e-gota:cubic-bezier(.55,.06,.68,.19);
+  --d-1:140ms; --d-2:240ms; --d-3:420ms; --d-4:700ms;
+  --d-asa:120ms; --d-onda:16s;
+
+  --z-art:1; --z-conteudo:2; --z-sticky:50; --z-menu:60;
+}
+
+/* --- tokens semânticos: padrão = ZG, porque o site é liderado
+   por ela. Os componentes só enxergam estes. --- */
+/* :where(#site) vale 0 de especificidade. Sem isso o #site
+   carregava os tokens da ZG com peso de ID e vencia o
+   [data-marca="soulbee"] do MESMO elemento — a página inteira da
+   SouLBee saía com o acento petrol da ZG. */
+:where(#site),
+[data-marca="zg"]{
+  --sf-page:var(--zg-paper);
+  --sf-sunken:var(--zg-paper-2);
+  --sf-raised:#FFFFFF;
+  --sf-dark:var(--zg-ink);
+  --sf-dark-2:#141A17;
+  --tx-1:var(--zg-ink);
+  --tx-2:var(--zg-ink-2);
+  --tx-3:var(--zg-ink-3);
+  --tx-ac:var(--zg-accent);        /* 7.2:1 — PODE ser texto */
+  --ac-graf:var(--zg-accent);      /* grafismo */
+  --ac-pale:var(--zg-accent-pale);
+  --tx-on-dark:#EDEFEA;
+  --tx-on-dark-2:#A8B3AC;
+  --ac-on-dark:#5E9B97;            /* 5.05:1 sobre a tinta ZG */
+  --ln:rgba(28,36,32,.14);
+  --ln-forte:rgba(28,36,32,.3);
+  --ln-dark:rgba(237,239,234,.16);
+  --ln-dark-forte:rgba(237,239,234,.32);
+}
+
+[data-marca="soulbee"]{
+  --sf-page:var(--sb-cream);
+  --sf-sunken:var(--sb-cream-2);
+  --sf-raised:var(--sb-cream-3);
+  --sf-dark:var(--sb-forest);
+  --sf-dark-2:var(--sb-forest-3);
+  --tx-1:var(--sb-forest);
+  --tx-2:#5A5F49;
+  --tx-3:#7C8168;
+  --tx-ac:var(--sb-mel);           /* âmbar LEGÍVEL; o --sb-amber não serve */
+  --ac-graf:var(--sb-amber);       /* grafismo apenas */
+  --ac-pale:var(--sb-amber-pale);
+  --tx-on-dark:#EDE7D8;
+  --tx-on-dark-2:#B4B893;
+  --ac-on-dark:var(--sb-amber);    /* 5.7:1 sobre o verde SouLBee */
+  --ln:rgba(42,46,32,.14);
+  --ln-forte:rgba(42,46,32,.3);
+  --ln-dark:rgba(247,243,232,.16);
+  --ln-dark-forte:rgba(247,243,232,.3);
+}
+
+/* Vale do Canaã: origem produtiva. Família sage/floresta, SEM
+   âmbar — o âmbar é o acento da SouLBee e confundiria as duas.
+   [identidade provisória: o Vale do Canaã ainda não tem uma] */
+[data-marca="vale"]{
+  --sf-page:#F1F2EA;
+  --sf-sunken:#E7E9DC;
+  --sf-raised:#F8F9F3;
+  --sf-dark:var(--sb-forest);
+  --sf-dark-2:var(--sb-forest-3);
+  --tx-1:var(--sb-forest);
+  --tx-2:#555B46;
+  --tx-3:#7C8168;
+  --tx-ac:#4D5235;                 /* sage escuro: legível como texto */
+  --ac-graf:var(--sb-sage);
+  --ac-pale:#DDE0CA;
+  --tx-on-dark:#EDE7D8;
+  --tx-on-dark-2:#B4B893;
+  --ac-on-dark:var(--sb-sage-2);
+  --ln:rgba(42,46,32,.14);
+  --ln-forte:rgba(42,46,32,.3);
+  --ln-dark:rgba(247,243,232,.16);
+  --ln-dark-forte:rgba(247,243,232,.3);
+}
+
+/* ============================================================
+   == SB:CSS:BASE ==
+   ============================================================ */
+#site{
+  font-family:var(--f-sans); font-size:var(--fs-400);
+  line-height:var(--lh-body); color:var(--tx-1);
+  background:var(--sf-page); min-height:100svh;
+  /* clip, não hidden: clip não cria contexto de rolagem, então
+     o position:sticky do header continua funcionando */
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+@supports not (overflow-x:clip){ #site{ overflow-x:hidden } }
+html,body{ background:#F7F7F4 }
+#site ::selection{ background:var(--ac-pale); color:var(--tx-1) }
+#site{ accent-color:var(--ac-graf) }
+
+#site h1,#site h2,#site h3{
+  font-family:var(--f-display); font-weight:300;
+  font-variation-settings:"SOFT" 0,"WONK" 0;
+  letter-spacing:var(--tr-tight); line-height:var(--lh-snug);
+  text-wrap:balance; color:var(--tx-1);
+}
+#site h1{ font-size:var(--fs-900); line-height:var(--lh-tight); letter-spacing:var(--tr-mega) }
+#site h2{ font-size:var(--fs-800) }
+#site h3{ font-family:var(--f-sans); font-size:var(--fs-600); font-weight:500; letter-spacing:0 }
+#site p{ max-width:var(--maxw-txt) }
+#site b,#site strong{ font-weight:500 }
+#site i.sci{ font-style:italic }
+
+.container{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:var(--gut) }
+.sec{ position:relative; padding-block:var(--sec-y) }
+.sec-sm{ padding-block:clamp(2.5rem,5vw,4rem) }
+.g12{ display:grid; grid-template-columns:repeat(12,1fr); gap:clamp(1rem,2vw,1.75rem) }
+.g12>*{ min-width:0 }   /* causa nº1 de overflow horizontal */
+.stack>*+*{ margin-top:var(--flow,var(--s-4)) }
+
+.band-page{ background:var(--sf-page); color:var(--tx-1) }
+.band-sunken{ background:var(--sf-sunken); color:var(--tx-1) }
+.band-dark,.band-dark-2{
+  color:var(--tx-on-dark);
+  /* reatribuicao: todo componente dentro da faixa passa a ler
+     tinta clara sem precisar de regra propria */
+  --tx-1:var(--tx-on-dark);
+  --tx-2:var(--tx-on-dark-2);
+  --tx-3:var(--tx-on-dark-2);
+  --tx-ac:var(--ac-on-dark);
+  --ac-graf:var(--ac-on-dark);
+  --ln:var(--ln-dark);
+  --ln-forte:var(--ln-dark-forte);
+  --sf-raised:rgba(255,255,255,.04);
+  --sf-sunken:rgba(255,255,255,.05);
+}
+.band-dark{ background:var(--sf-dark) }
+.band-dark-2{ background:var(--sf-dark-2) }
+
+/* ============================================================
+   == SB:CSS:UTIL ==
+   ============================================================ */
+.eyebrow{
+  font-size:var(--fs-100); font-weight:500; letter-spacing:var(--tr-eyebrow);
+  text-transform:uppercase; color:var(--tx-2); display:block;
+}
+/* na ZG o rótulo é mono — é o que dá o registro de relatório */
+[data-marca="zg"] .eyebrow{ font-family:var(--f-mono); letter-spacing:.14em; color:var(--tx-ac) }
+
+.lead{ font-size:var(--fs-lead); font-weight:300; line-height:1.5; color:var(--tx-2); max-width:54ch }
+
+.mono{ font-family:var(--f-mono); font-size:var(--fs-200); letter-spacing:var(--tr-wide); font-variant-numeric:tabular-nums }
+.mono-caps{ font-family:var(--f-mono); font-size:var(--fs-mono); letter-spacing:.1em; text-transform:uppercase }
+.num-sec{ font-family:var(--f-mono); font-size:var(--fs-200); color:var(--tx-ac); display:block; margin-bottom:var(--s-2) }
+
+/* placeholder: a convenção que torna o mockup revisável */
+.ph{
+  font-family:var(--f-mono); font-size:.9em; color:var(--tx-ac);
+  border-bottom:1px dashed currentColor; padding-bottom:1px; overflow-wrap:anywhere;
+}
+.band-dark .ph,.band-dark-2 .ph{ color:var(--ac-graf) }
+
+/* --- botões --- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:var(--s-2);
+  min-height:52px; padding:0 var(--s-6); border-radius:var(--r-1);
+  font-size:var(--fs-200); font-weight:500; letter-spacing:.14em;
+  text-transform:uppercase; white-space:nowrap; text-align:center;
+  position:relative; overflow:hidden; isolation:isolate;
+  transition:color var(--d-2) var(--e-out),border-color var(--d-2) var(--e-out),
+             background-color var(--d-2) var(--e-out);
+}
+.btn-1{ background:var(--ac-graf); color:#16201C }
+[data-marca="zg"] .btn-1{ color:#F7F7F4 }
+.btn-1:hover{ background:var(--tx-1); color:var(--sf-page) }
+.btn-2{ border:1px solid var(--ln-forte); color:var(--tx-1) }
+.btn-2:hover{ border-color:var(--tx-1); background:rgba(28,36,32,.04) }
+.band-dark .btn-2,.band-dark-2 .btn-2{ border-color:var(--ln-dark-forte); color:var(--tx-on-dark) }
+.band-dark .btn-2:hover,.band-dark-2 .btn-2:hover{ border-color:var(--tx-on-dark); background:rgba(255,255,255,.07) }
+.btn-row{ display:flex; flex-wrap:wrap; gap:var(--s-3) var(--s-4); align-items:center }
+
+.lnk{
+  display:inline-block; font-size:var(--fs-200); font-weight:500;
+  letter-spacing:.12em; text-transform:uppercase;
+  border-bottom:1px solid currentColor; padding-bottom:3px;
+  transition:opacity var(--d-2) var(--e-out);
+}
+.lnk:hover{ opacity:.62 }
+.lnk-ac{ color:var(--tx-ac) }
+
+.rule{ height:1px; background:var(--ln); border:0 }
+
+#site :focus-visible{ outline:2px solid var(--tx-ac); outline-offset:3px; border-radius:2px }
+.band-dark :focus-visible,.band-dark-2 :focus-visible{ outline-color:var(--ac-graf) }
+
+.sr-only{
+  position:absolute!important; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; border:0;
+}
+.skip{
+  position:absolute; left:var(--s-4); top:-100px; z-index:200;
+  background:var(--sf-dark); color:var(--tx-on-dark);
+  padding:var(--s-3) var(--s-5); border-radius:var(--r-2);
+  font-size:var(--fs-200); letter-spacing:.1em; text-transform:uppercase;
+  transition:top var(--d-2) var(--e-out);
+}
+.skip:focus{ top:var(--s-4) }
+
+.scroller{
+  display:flex; gap:var(--s-4); overflow-x:auto; overscroll-behavior-x:contain;
+  scroll-snap-type:x proximity; scrollbar-width:thin;
+  margin-inline:calc(var(--gut) * -1); padding:var(--s-2) var(--gut) var(--s-5);
+}
+.scroller>*{ scroll-snap-align:start }
+
+.art{ position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:var(--z-art) }
+.art>*{ position:absolute }
+.corpo{ position:relative; z-index:var(--z-conteudo) }
+
+.aviso{
+  background:var(--zg-ink); color:#A8B3AC; text-align:center;
+  padding:var(--s-3) var(--gut);
+}
+.aviso b{ color:var(--zg-accent-2) }
+
+/* ============================================================
+   == SB:CSS:MARCA == wordmark ZG e glifo SouLBee
+   O wordmark da ZG é tipográfico e deliberadamente SEM abelha:
+   o ponto do documento é que a página profissional não se reduz
+   ao universo das abelhas.  [proposta a validar]
+   ============================================================ */
+.wm{ display:inline-flex; align-items:center; gap:var(--s-3); flex-shrink:0 }
+.wm-sig{
+  display:grid; place-items:center;
+  width:34px; height:34px; flex:0 0 auto;
+  border:1px solid currentColor; border-radius:1px;
+  font-family:var(--f-sans); font-weight:500; font-size:.8125rem;
+  letter-spacing:.06em; line-height:1;
+}
+.wm-txt{ display:flex; flex-direction:column; line-height:1.2 }
+.wm-txt b{
+  font-family:var(--f-sans); font-weight:500; font-size:var(--fs-200);
+  letter-spacing:.1em; text-transform:uppercase;
+}
+.wm-txt span{
+  font-family:var(--f-mono); font-size:var(--fs-mono);
+  letter-spacing:.14em; text-transform:uppercase; opacity:.7;
+}
+.wm-sb{ display:inline-flex; align-items:center; gap:var(--s-3) }
+.wm-sb svg{ width:30px; height:30px; flex:0 0 auto }
+.wm-sb b{
+  font-family:var(--f-sans); font-weight:500; font-size:var(--fs-200);
+  letter-spacing:var(--tr-marca); text-transform:uppercase;
+}
+
+/* ============================================================
+   == SB:CSS:HEADER ==
+   ============================================================ */
+.hdr{
+  position:sticky; top:0; z-index:var(--z-sticky);
+  background:var(--sf-page); color:var(--tx-1);
+  border-bottom:1px solid var(--ln);
+  transition:box-shadow var(--d-3) var(--e-out);
+}
+.hdr.is-solid{ box-shadow:var(--sh-nav) }   /* a única sombra do site */
+.hdr-sobre{ background:transparent; border-bottom-color:transparent; color:var(--tx-on-dark) }
+.hdr-sobre.is-solid{
+  background:var(--sf-page); color:var(--tx-1);
+  border-bottom-color:var(--ln); backdrop-filter:blur(10px);
+}
+.hdr-in{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:var(--s-5);
+  /* literal, NUNCA var(--header-h): o JS escreve --header-h a
+     partir da altura medida, e usá-la aqui criaria um laço em que
+     o header cresce a cada medição. */
+  min-height:68px;
+}
+.hdr-nav{ display:flex; align-items:center; gap:clamp(.75rem,1.8vw,1.5rem) }
+.hdr-nav a{
+  font-size:var(--fs-100); font-weight:500; letter-spacing:.14em;
+  text-transform:uppercase; padding:var(--s-2) 0; position:relative; opacity:.78;
+  transition:opacity var(--d-2) var(--e-out);
+}
+.hdr-nav a:hover{ opacity:1 }
+.hdr-nav a::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+  background:currentColor; transform:scaleX(0); transform-origin:left;
+  transition:transform var(--d-2) var(--e-out);
+}
+.hdr-nav a:hover::after{ transform:scaleX(1) }
+.hdr-nav a[aria-current]{ opacity:1 }
+.hdr-nav a[aria-current]::after{ transform:scaleX(1); background:var(--ac-graf) }
+.hdr-cta{ margin-left:var(--s-2) }
+.hdr-fio{
+  position:absolute; left:0; bottom:-1px; height:2px; width:100%;
+  background:var(--ac-graf); transform-origin:left;
+  transform:scaleX(var(--sb-progress,0));
+}
+.sentinela{ width:100%; height:1px }
+
+.burger{
+  display:none; align-items:center; gap:var(--s-2);
+  font-size:var(--fs-100); font-weight:500; letter-spacing:.14em;
+  text-transform:uppercase; padding:var(--s-3) 0;
+}
+.burger-x{ display:inline-block; width:16px; height:10px; position:relative }
+.burger-x::before,.burger-x::after{
+  content:""; position:absolute; left:0; right:0; height:1px; background:currentColor;
+  transition:transform var(--d-2) var(--e-out);
+}
+.burger-x::before{ top:0 } .burger-x::after{ bottom:0 }
+.burger[aria-expanded="true"] .burger-x::before{ transform:translateY(4.5px) rotate(45deg) }
+.burger[aria-expanded="true"] .burger-x::after{ transform:translateY(-4.5px) rotate(-45deg) }
+
+.menu{
+  position:fixed; inset:0; z-index:var(--z-menu);
+  background:var(--sf-dark); color:var(--tx-on-dark);
+  display:flex; flex-direction:column; justify-content:center;
+  gap:var(--s-5); padding:var(--gut);
+  opacity:0; visibility:hidden; transform:translateY(-8px);
+  transition:opacity var(--d-3) var(--e-out),transform var(--d-3) var(--e-out),
+             visibility 0s linear var(--d-3);
+}
+.menu.is-open{ opacity:1; visibility:visible; transform:none; transition-delay:0s }
+.menu a{
+  font-family:var(--f-display); font-size:var(--fs-700); font-weight:300;
+  border-bottom:1px solid var(--ln-dark); padding-bottom:var(--s-3);
+}
+.menu-fechar{
+  position:absolute; top:var(--gut); right:var(--gut);
+  font-size:var(--fs-100); letter-spacing:.16em; text-transform:uppercase;
+}
+
+/* ============================================================
+   == SB:CSS:HERO == e as TRÊS PORTAS
+   Cada porta nomeia o COMPRADOR, não a marca — quem chega se
+   reconhece pelo que é, não pelo nome da iniciativa.
+   ============================================================ */
+.hero{ position:relative; overflow:hidden; padding-block:clamp(3.5rem,8vw,6.5rem) clamp(3rem,6vw,5rem) }
+.hero-sobre{ min-height:min(92svh,860px); display:flex; align-items:center }
+.hero h1{ font-size:var(--fs-hero); margin:var(--s-4) 0 var(--s-5) }
+.hero .lead{ margin-bottom:var(--s-7) }
+.hero-assin{
+  font-family:var(--f-mono); font-size:var(--fs-200); letter-spacing:.1em;
+  color:var(--tx-2); display:block; margin-bottom:var(--s-6);
+}
+
+.portas{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:var(--s-4); margin-top:var(--s-6); align-items:stretch;
+}
+.porta{
+  display:flex; flex-direction:column; gap:var(--s-2);
+  padding:var(--s-5); min-height:104px;
+  border:1px solid var(--ln-forte); border-radius:var(--r-1);
+  /* o fio da esquerda é o acento do DESTINO: a porta já diz em
+     que mundo você entra, antes de você clicar */
+  border-left:2px solid var(--porta-ac,var(--ln-forte));
+  background:var(--sf-raised); color:var(--tx-1);
+  transition:border-color var(--d-2) var(--e-out),background-color var(--d-2) var(--e-out),
+             transform var(--d-2) var(--e-out);
+}
+.porta b{
+  font-size:var(--fs-200); font-weight:500; letter-spacing:.1em;
+  text-transform:uppercase; line-height:1.3;
+}
+.porta span{ font-family:var(--f-mono); font-size:var(--fs-mono); line-height:1.5; color:var(--tx-2) }
+.porta::after{
+  content:"→"; font-family:var(--f-mono); color:var(--porta-ac,var(--tx-ac));
+  margin-top:auto; font-size:var(--fs-300);
+  transition:transform var(--d-2) var(--e-out);
+}
+.porta:hover{ border-color:var(--tx-ac); border-left-color:var(--porta-ac,var(--tx-ac)); background:var(--sf-page) }
+.sb-motion .porta:hover{ transform:translateY(-2px) }
+.sb-motion .porta:hover::after{ transform:translateX(4px) }
+
+/* ============================================================
+   == SB:CSS:BLOCOS == frentes, educação, credenciais
+   ============================================================ */
+.frente{
+  position:relative; padding:clamp(1.75rem,3.5vw,2.75rem);
+  border:1px solid var(--ln); border-radius:var(--r-1);
+  background:var(--sf-page); color:var(--tx-1);
+  display:flex; flex-direction:column; gap:var(--s-4); min-width:0;
+}
+.frente-tag{
+  font-family:var(--f-mono); font-size:var(--fs-mono); letter-spacing:.12em;
+  text-transform:uppercase; color:var(--tx-ac);
+  border:1px solid currentColor; border-radius:var(--r-pill);
+  padding:3px var(--s-3); align-self:flex-start;
+  max-width:100%; overflow-wrap:anywhere; line-height:1.5;
+}
+.frente h3{ font-family:var(--f-display); font-weight:300; font-size:var(--fs-700) }
+.frente p{ color:var(--tx-2); max-width:46ch }
+.frente .lnk{ margin-top:auto; align-self:flex-start; color:var(--tx-ac) }
+
+.pilares{ row-gap:var(--s-7) }
+.pilar{ grid-column:span 4; position:relative; padding-left:var(--s-6) }
+.pilar::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:1px;
+  background:var(--ln); transform-origin:top;
+}
+.sb-motion .pilar::before{
+  transform:scaleY(0); transition:transform var(--d-4) var(--e-out);
+  transition-delay:calc(var(--i,0) * 120ms);
+}
+.sb-motion .pilar.is-in::before{ transform:scaleY(1) }
+.pilar svg{ width:46px; height:46px; margin-bottom:var(--s-4); color:var(--ac-graf) }
+.pilar h3{ margin-bottom:var(--s-3) }
+.pilar p{ color:var(--tx-2); font-size:var(--fs-300); max-width:34ch }
+
+.creds{ display:flex; flex-wrap:wrap; gap:var(--s-2) }
+.creds li{
+  font-family:var(--f-mono); font-size:var(--fs-mono); letter-spacing:.08em;
+  text-transform:uppercase; color:var(--tx-2);
+  border:1px solid var(--ln-forte); border-radius:var(--r-pill);
+  padding:var(--s-2) var(--s-4);
+}
+
+/* linha do tempo ciência → aplicação */
+.trilho{ display:grid; grid-template-columns:repeat(auto-fit,minmax(142px,1fr)); gap:var(--s-5); margin-top:var(--s-6) }
+.trilho-p{ position:relative; padding-top:var(--s-5); border-top:1px solid var(--ln) }
+.trilho-p b{ font-family:var(--f-mono); font-size:var(--fs-200); color:var(--tx-ac); display:block; margin-bottom:var(--s-2) }
+.trilho-p span{ font-size:var(--fs-300); color:var(--tx-2) }
+
+/* ============================================================
+   == SB:CSS:OFERTA ==
+   O esqueleto fixo que transforma área de atuação em algo
+   comprável. Usado por experiências e por formação.
+   ============================================================ */
+.ofertas{ display:grid; gap:var(--s-6); grid-template-columns:repeat(2,1fr) }
+.oferta{
+  display:flex; flex-direction:column;
+  border:1px solid var(--ln); border-radius:var(--r-1);
+  background:var(--sf-raised); overflow:hidden; min-width:0;
+  transition:border-color var(--d-2) var(--e-out);
+}
+.oferta:hover{ border-color:var(--ln-forte) }
+.oferta-topo{ padding:clamp(1.5rem,3vw,2rem) clamp(1.5rem,3vw,2rem) 0 }
+.oferta-tag{
+  font-family:var(--f-mono); font-size:var(--fs-mono); letter-spacing:.12em;
+  text-transform:uppercase; color:var(--tx-ac); display:block; margin-bottom:var(--s-3);
+}
+.oferta h3{ font-family:var(--f-display); font-weight:300; font-size:var(--fs-700); margin-bottom:var(--s-3) }
+.oferta-sub{ color:var(--tx-2); font-size:var(--fs-300); margin-bottom:var(--s-5) }
+.oferta-corpo{ padding:0 clamp(1.5rem,3vw,2rem) clamp(1.5rem,3vw,2rem); display:flex; flex-direction:column; gap:var(--s-4); flex:1 }
+
+/* as linhas do esqueleto */
+.ficha{ border-top:1px solid var(--ln) }
+.ficha>div{
+  display:grid; grid-template-columns:minmax(92px,32%) 1fr; gap:var(--s-3);
+  padding:var(--s-3) 0; border-bottom:1px solid var(--ln); align-items:baseline;
+}
+.ficha dt{ font-family:var(--f-mono); font-size:var(--fs-mono); letter-spacing:.1em; text-transform:uppercase; color:var(--tx-2) }
+.ficha dd{ margin:0; font-size:var(--fs-300) }
+.ficha li{ font-size:var(--fs-300); position:relative; padding-left:var(--s-4) }
+.ficha li::before{ content:"·"; position:absolute; left:var(--s-2); color:var(--tx-ac) }
+.ficha li+li{ margin-top:var(--s-1) }
+
+.oferta-preco{
+  display:flex; align-items:baseline; gap:var(--s-3); flex-wrap:wrap;
+  padding-top:var(--s-2);
+}
+.oferta-preco b{
+  font-family:var(--f-display); font-weight:400; font-size:var(--fs-700);
+  line-height:1.1; color:var(--tx-1);
+}
+.oferta-preco .ph{ font-size:.5em; white-space:nowrap; overflow-wrap:normal }
+.oferta-preco small{ font-family:var(--f-mono); font-size:var(--fs-mono); letter-spacing:.1em; text-transform:uppercase; color:var(--tx-2) }
+.oferta .btn{ margin-top:auto; align-self:stretch }
+
+/* ============================================================
+   == SB:CSS:MOLDURA ==
+   Moldura rotulada + marcas de corte + ilustração-fantasma lê
+   como pré-impressão intencional. Retângulo cinza sem rótulo lê
+   como quebrado. Mesmos pixels, impressão oposta.
+   ============================================================ */
+.moldura{
+  position:relative; overflow:hidden; aspect-ratio:var(--ratio,4/5);
+  background:var(--sb-frame); border:1px solid var(--ln);
+  border-radius:var(--r-1); display:grid; place-items:center;
+}
+.moldura img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:var(--pos,50% 50%) }
+.moldura-art{ width:62%; max-width:250px; opacity:.3; color:var(--sb-forest) }
+.moldura-marcas{
+  position:absolute; inset:9px; pointer-events:none; opacity:.55;
+  --mk:var(--sb-amber); --mkl:12px; --mkw:1px;
+  background-image:
+    linear-gradient(var(--mk),var(--mk)),linear-gradient(var(--mk),var(--mk)),
+    linear-gradient(var(--mk),var(--mk)),linear-gradient(var(--mk),var(--mk)),
+    linear-gradient(var(--mk),var(--mk)),linear-gradient(var(--mk),var(--mk)),
+    linear-gradient(var(--mk),var(--mk)),linear-gradient(var(--mk),var(--mk));
+  background-repeat:no-repeat;
+  background-size:
+    var(--mkl) var(--mkw),var(--mkw) var(--mkl), var(--mkl) var(--mkw),var(--mkw) var(--mkl),
+    var(--mkl) var(--mkw),var(--mkw) var(--mkl), var(--mkl) var(--mkw),var(--mkw) var(--mkl);
+  background-position:
+    left top,left top, right top,right top,
+    left bottom,left bottom, right bottom,right bottom;
+}
+.moldura-rot{ position:absolute; left:var(--s-4); bottom:var(--s-3); color:var(--tx-2); pointer-events:none }
+.moldura.tem-foto .moldura-art,
+.moldura.tem-foto .moldura-marcas,
+.moldura.tem-foto .moldura-rot{ display:none }
+.moldura.tem-foto{ background:var(--sf-sunken) }
+
+/* ============================================================
+   == SB:CSS:ESPECIES == fichas em folha de espécime
+   Desenhadas como etiqueta de herbário — explicitamente NÃO
+   como card de blog. É o schema fixo que faz parecer científico.
+   ============================================================ */
+.especies{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-5) }
+.esp{
+  display:flex; flex-direction:column; min-width:0;
+  background:var(--sf-page); border:1px solid var(--ln); border-radius:var(--r-1); overflow:hidden;
+}
+.esp-fig{
+  position:relative; aspect-ratio:16/10; overflow:hidden;
+  background:var(--sb-sage-050); display:grid; place-items:end center;
+  padding:var(--s-4); border-bottom:1px solid var(--ln);
+}
+.esp-fig::after{
+  content:""; position:absolute; left:var(--s-4); right:var(--s-4); bottom:var(--s-4);
+  height:1px; background:var(--ln-forte);
+}
+.esp-bee{ width:var(--bw,92px); transform-origin:50% 100%; transform:scale(var(--esc,1)); color:var(--sb-forest) }
+/* "escala verdadeira": as abelhas partem de um tamanho
+   normalizado e crescem até a proporção REAL entre elas */
+.sb-motion .esp-bee{
+  transform:scale(var(--esc0,.62));
+  transition:transform 900ms var(--e-out); transition-delay:calc(var(--i,0) * 70ms);
+}
+.sb-motion .esp.is-in .esp-bee{ transform:scale(var(--esc,1)) }
+.pelo{ opacity:0 }
+.sb-motion .pelo{ transition:opacity var(--d-3) var(--e-out); transition-delay:calc(var(--p,0) * 30ms) }
+.sb-motion .esp:hover .pelo{ opacity:.55 }
+.esp-corpo{ padding:var(--s-5); display:flex; flex-direction:column; gap:var(--s-3) }
+.esp-nome{ font-family:var(--f-display); font-size:var(--fs-600); font-weight:400; line-height:1.15 }
+.esp-sci{ font-family:var(--f-mono); font-style:italic; font-size:var(--fs-200); color:var(--tx-2) }
+.esp-tax{ color:var(--tx-2); border-bottom:1px solid var(--ln); padding-bottom:var(--s-3) }
+.esp-dados{ display:flex; flex-direction:column; gap:var(--s-2) }
+.esp-dados>div{ display:grid; grid-template-columns:minmax(88px,36%) 1fr; gap:var(--s-3); align-items:baseline }
+.esp-dados dt{ font-family:var(--f-mono); font-size:var(--fs-mono); letter-spacing:.1em; text-transform:uppercase; color:var(--tx-2) }
+.esp-dados dd{ margin:0; font-size:var(--fs-300) }
+.escala{ display:flex; align-items:center; gap:var(--s-3); margin-bottom:var(--s-6); color:var(--tx-2) }
+.escala i{ display:block; height:1px; width:64px; background:currentColor; transform-origin:left; font-style:normal }
+.sb-motion .escala i{ transform:scaleX(0); transition:transform var(--d-4) var(--e-out) }
+.sb-motion .escala.is-in i{ transform:scaleX(1) }
+
+/* ============================================================
+   == SB:CSS:FORM == contato e lista de espera
+   ============================================================ */
+.form{ display:grid; gap:var(--s-4); max-width:560px }
+.campo{ display:flex; flex-direction:column; gap:var(--s-2) }
+.campo label{ font-family:var(--f-mono); font-size:var(--fs-mono); letter-spacing:.1em; text-transform:uppercase; color:var(--tx-2) }
+.campo input,.campo select,.campo textarea{
+  width:100%; padding:var(--s-3) var(--s-4);
+  border:1px solid var(--ln-forte); border-radius:var(--r-1);
+  background:var(--sf-raised); color:var(--tx-1); font-size:var(--fs-300);
+  transition:border-color var(--d-2) var(--e-out);
+}
+.campo textarea{ min-height:118px; resize:vertical }
+.campo input:focus,.campo select:focus,.campo textarea:focus{ border-color:var(--tx-ac); outline:none }
+.campo input::placeholder,.campo textarea::placeholder{ color:var(--tx-3) }
+.campo-nota{ font-family:var(--f-mono); font-size:var(--fs-mono); color:var(--tx-2) }
+.form-2{ display:grid; grid-template-columns:1fr 1fr; gap:var(--s-4) }
+
+/* contexto da oferta, preenchido pelo link */
+.contexto{
+  display:flex; align-items:center; gap:var(--s-3); flex-wrap:wrap;
+  padding:var(--s-4) var(--s-5); margin-bottom:var(--s-6);
+  border:1px solid var(--tx-ac); border-radius:var(--r-1);
+  background:var(--ac-pale); color:var(--tx-1);
+}
+.contexto .mono-caps{ color:var(--tx-2) }
+.contexto b{ font-size:var(--fs-300) }
+
+.canais{ display:flex; flex-wrap:wrap; gap:var(--s-4) var(--s-6); margin-top:var(--s-6); padding-top:var(--s-5); border-top:1px solid var(--ln) }
+.canal{ display:flex; align-items:baseline; gap:var(--s-2); flex-wrap:wrap; min-width:0 }
+.canal dt{ font-family:var(--f-mono); font-size:var(--fs-mono); letter-spacing:.1em; text-transform:uppercase; color:var(--tx-2) }
+.canal dd{ margin:0; min-width:0 }
+.chip-ph{
+  font-family:var(--f-mono); font-size:var(--fs-200); color:var(--tx-ac);
+  border:1px dashed currentColor; border-radius:var(--r-pill); padding:2px var(--s-3);
+  display:inline-block; overflow-wrap:anywhere; max-width:100%;
+}
+
+/* caixa de atenção legal — sinalização, não parecer jurídico */
+.nota-legal{
+  border-left:2px solid var(--ac-graf); background:var(--sf-sunken);
+  padding:var(--s-5); border-radius:0 var(--r-1) var(--r-1) 0;
+}
+.nota-legal p{ font-size:var(--fs-300); color:var(--tx-2); max-width:62ch }
+.nota-legal p+p{ margin-top:var(--s-3) }
+.nota-legal strong{ color:var(--tx-1) }
+
+/* ============================================================
+   == SB:CSS:FOOTER ==
+   ============================================================ */
+.ft{ padding-block:var(--s-8) var(--s-6) }
+.ft-grid{ row-gap:var(--s-7) }
+.ft-marca{ grid-column:1 / span 4 }
+.ft-marca p{ color:var(--tx-on-dark-2); font-size:var(--fs-300); margin-top:var(--s-4) }
+.ft-col{ grid-column:span 2 }
+.ft-col:nth-of-type(2){ grid-column:6 / span 2 }
+.ft-col:nth-of-type(3){ grid-column:8 / span 2 }
+.ft-col:nth-of-type(4){ grid-column:10 / span 3 }
+.ft-col h4{
+  font-family:var(--f-mono); font-size:var(--fs-mono); letter-spacing:.1em;
+  text-transform:uppercase; color:var(--tx-on-dark-2); font-weight:400; margin-bottom:var(--s-4);
+}
+.ft-col li+li{ margin-top:var(--s-2) }
+.ft-col a,.ft-col span{ font-size:var(--fs-300); color:var(--tx-on-dark-2) }
+.ft-col a:hover{ color:var(--tx-on-dark) }
+.ft-legal{
+  margin-top:var(--s-8); padding-top:var(--s-5); border-top:1px solid var(--ln-dark);
+  display:flex; flex-wrap:wrap; gap:var(--s-3) var(--s-6); color:var(--tx-on-dark-2);
+}
+.ft-legal p{ max-width:none; font-size:var(--fs-200) }
+
+/* ============================================================
+   == SB:CSS:DIVISORES ==
+   Duas camadas: um path ESTÁTICO que carrega o design, e gotas
+   com fio de ancoragem que nasce dentro da faixa escura — sem
+   o fio elas pareciam sujeira solta embaixo da onda.
+   ============================================================ */
+.divisor{ display:block; width:100%; height:clamp(40px,5vw,80px); margin-bottom:-1px }
+.gota{ transform-box:fill-box; transform-origin:50% 0% }
+.sb-motion .gota{ animation:sb-gota 4.2s var(--e-gota) var(--dl,0ms) infinite }
+@keyframes sb-gota{
+  0%,58%{ transform:translateY(0) scaleY(1); opacity:.9 }
+  78%{ transform:translateY(13px) scaleY(1.45); opacity:.75 }
+  100%{ transform:translateY(30px) scaleY(.35); opacity:0 }
+}
+
+/* ============================================================
+   == SB:CSS:REVEAL ==
+   Padrão VISÍVEL. A classe js-reveal só entra junto com o
+   IntersectionObserver, dentro do mesmo try — uma falha de JS
+   nunca pode deixar conteúdo escondido.
+   ============================================================ */
+.js-reveal .reveal{
+  opacity:0; transform:translateY(16px);
+  transition:opacity var(--d-4) var(--e-out),transform var(--d-4) var(--e-out);
+  transition-delay:calc(var(--i,0) * 70ms);
+}
+.js-reveal .reveal.is-in{ opacity:1; transform:none }
+
+/* ============================================================
+   == SB:CSS:RESPONSIVO ==
+   ============================================================ */
+#site section[id]{ scroll-margin-top:calc(var(--header-h) + 14px) }
+
+@media (max-width:1024px){
+  .especies{ grid-template-columns:repeat(2,1fr) }
+  .ft-marca{ grid-column:1 / span 12 }
+  #site .ft-col{ grid-column:span 4 }
+}
+@media (max-width:860px){
+  #site.js .hdr-nav{ display:none }
+  #site.js .burger{ display:inline-flex }
+  .hdr-nav{ flex-wrap:wrap; justify-content:flex-end; row-gap:var(--s-1) }
+  .hdr-in{ flex-wrap:wrap; padding-block:var(--s-3) }
+  .hdr-cta{ display:none }
+  .portas{ grid-template-columns:1fr }
+  .ofertas{ grid-template-columns:1fr }
+}
+@media (max-width:620px){
+  .wm-txt span{ display:none }
+  .wm-sig{ width:30px; height:30px; font-size:.75rem }
+  .pilar{ grid-column:1 / span 12; padding-left:0; padding-top:var(--s-5) }
+  .pilar::before{ left:0; right:0; top:0; bottom:auto; width:auto; height:1px }
+  .sb-motion .pilar::before{ transform:scaleX(0) }
+  .sb-motion .pilar.is-in::before{ transform:scaleX(1) }
+  .especies{ grid-template-columns:1fr }
+  .trilho{ grid-template-columns:1fr; gap:0 }
+  .trilho-p{ border-top:0; border-left:1px solid var(--ac-graf); padding:var(--s-4) 0 var(--s-4) var(--s-5) }
+  .form-2{ grid-template-columns:1fr }
+  #site .ft-col{ grid-column:span 6 }
+}
+@media (max-width:400px){
+  #site{ --gut:1rem }
+  .btn{ width:100%; padding-inline:var(--s-4) }
+  #site .ft-col{ grid-column:1 / span 12 }
+}
+
+/* ============================================================
+   == SB:CSS:MOTION ==
+   Segunda cinta. Zerar durações NÃO basta: um loop infinito
+   cujo keyframe em 0% está fora da tela congelaria o elemento
+   fora do canvas. Cada estado de repouso é redeclarado aqui.
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important; animation-iteration-count:1!important;
+    transition-duration:.01ms!important; scroll-behavior:auto!important;
+  }
+  .bee{ animation:none!important;
+    transform:translate3d(var(--rx,50%),var(--ry,40%),0) rotate(var(--rr,0deg)) scale(var(--sc,1))!important }
+  .asa{ animation:none!important; transform:rotate(-6deg)!important }
+  .gota{ animation:none!important; transform:none!important; opacity:.9!important }
+  .esp-bee{ transform:scale(var(--esc,1))!important }
+  .escala i{ transform:scaleX(1)!important }
+  .pilar::before{ transform:scaleY(1)!important }
+  .pelo{ opacity:.5!important }
+  .porta{ transform:none!important }
+  .js-reveal .reveal{ opacity:1!important; transform:none!important }
+}
+
+/* ============================================================
+   == SB:CSS:PRINT ==
+   ============================================================ */
+@media print{
+  .hdr,.menu,.skip,.art,.divisor,.aviso{ display:none!important }
+  #site,.band-dark,.band-dark-2{ background:#fff!important; color:#000!important }
+  .band-dark h1,.band-dark h2,.band-dark h3,
+  .band-dark-2 h1,.band-dark-2 h2,.band-dark-2 h3{ color:#000!important }
+  .lead,.eyebrow,p{ color:#222!important }
+  .sec{ padding-block:1.5rem; break-inside:avoid }
+  .js-reveal .reveal{ opacity:1!important; transform:none!important }
+}

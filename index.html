@@ -1,0 +1,431 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Camilla Zanotti Gallon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Jost:ital,wght@0,300..500;1,400&display=swap">
+<link rel="stylesheet" href="css/site.css">
+
+<!-- ============================================================
+     == SB:HOME == Camilla Zanotti Gallon / ZG Biodiversidade
+     ============================================================
+     Índice do site:  grep -rn "== SB:" .
+     Esta é a página principal. Ela NÃO tem doctype/html/head/body
+     de propósito: no alvo publicado o conteúdo é embrulhado pelo
+     publicador. As demais páginas são documentos completos. O CSS
+     é agnóstico de modo justamente por causa dessa assimetria.
+
+     Conteúdo é HTML estático, não gerado por JS — assim nenhuma
+     seção fica vazia se o JavaScript falhar. O JS só faz
+     comportamento.
+     ============================================================ -->
+
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <!-- retrato: fantasma de moldura. Rosto humano NUNCA recortado
+       em hexágono — em produto é elegante, em retrato mutila. -->
+  <symbol id="art-retrato" viewBox="0 0 120 150" fill="none" stroke="currentColor"
+          stroke-width="1.25" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <circle cx="60" cy="54" r="26"/>
+    <path d="M18 150 C18 116 36 96 60 96 C84 96 102 116 102 150"/>
+    <path d="M44 130 C49 123 52 118 52 112 M76 130 C71 123 68 118 68 112" opacity=".45"/>
+  </symbol>
+
+  <!-- glifos dos pilares: círculo + hexágono + linha, mesmo peso
+       de traço. Nada de frasco, microscópio, garfo e faca. -->
+  <symbol id="g-ciencia" viewBox="0 0 56 56" fill="none" stroke="currentColor"
+          stroke-width="1.25" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <path d="M16 14 L28 7 L40 14 L40 28 L28 35 L16 28 Z"/>
+    <path d="M16 14 L28 21 L40 14 M28 21 L28 35" opacity=".4"/>
+    <path d="M8 46 L48 46"/><path d="M8 42 L8 50 M28 42 L28 50 M48 42 L48 50"/>
+    <path d="M18 44 L18 48 M38 44 L38 48" opacity=".45"/>
+  </symbol>
+  <symbol id="g-territorio" viewBox="0 0 56 56" fill="none" stroke="currentColor"
+          stroke-width="1.25" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <path d="M6 40 C16 30 22 42 30 34 C38 26 44 36 50 30"/>
+    <path d="M6 48 C16 38 22 50 30 42 C38 34 44 44 50 38" opacity=".45"/>
+    <circle cx="30" cy="14" r="7"/><path d="M30 21 L30 30"/>
+    <path d="M23 9 L37 9" opacity=".5"/>
+  </symbol>
+  <symbol id="g-educacao" viewBox="0 0 56 56" fill="none" stroke="currentColor"
+          stroke-width="1.25" stroke-linejoin="round" vector-effect="non-scaling-stroke">
+    <path d="M6 16 L28 6 L50 16 L28 26 Z"/>
+    <path d="M14 20 L14 36 C14 36 20 42 28 42 C36 42 42 36 42 36 L42 20"/>
+    <path d="M50 16 L50 32" opacity=".55"/>
+  </symbol>
+
+  <!-- abelha compacta: só para a marca SouLBee dentro do bloco de
+       frentes. A ZG é deliberadamente SEM abelha. -->
+  <symbol id="glifo-bee" viewBox="0 0 48 56" fill="none" stroke="currentColor"
+          stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke">
+    <path d="M23 17 C15 11 5 14 3 22 C2 28 9 32 16 30 C22 28 25 23 23 17 Z"/>
+    <path d="M25 17 C33 11 43 14 45 22 C46 28 39 32 32 30 C26 28 23 23 25 17 Z"/>
+    <ellipse cx="24" cy="20" rx="7" ry="6.5"/>
+    <path d="M24 26 C30 26 31 33 30 39 C29 46 26 52 24 53 C22 52 19 46 18 39 C17 33 18 26 24 26 Z"/>
+    <path d="M18 32 H30 M18 39 H30" opacity=".6"/>
+    <ellipse cx="24" cy="10" rx="5.4" ry="4.8"/>
+    <path d="M21 6 C19 3 18 2 16 0 M27 6 C29 3 30 2 32 0"/>
+  </symbol>
+</svg>
+
+<div id="site" lang="pt-BR" data-marca="zg">
+
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- faixa de mockup — APAGAR no lançamento -->
+<div class="aviso mono-caps">
+  Mockup para aprovação · textos e imagens sujeitos a revisão ·
+  trechos entre <b>[colchetes]</b> aguardam informação
+</div>
+
+<span class="sentinela" id="sentinela" aria-hidden="true"></span>
+
+<!-- == SB:HEADER == -->
+<header class="hdr" id="hdr">
+  <div class="container hdr-in">
+    <a class="wm" href="index.html" aria-label="Camilla Zanotti Gallon, início">
+      <span class="wm-sig" aria-hidden="true">ZG</span>
+      <span class="wm-txt">
+        <b>Camilla Zanotti Gallon</b>
+        <span>ZG Biodiversidade Aplicada</span>
+      </span>
+    </a>
+    <nav class="hdr-nav" aria-label="Navegação principal">
+      <a href="#frentes">Atuação</a>
+      <a href="experiencias.html">Experiências</a>
+      <a href="meliponicultura.html">Meliponicultura</a>
+      <a href="#educacao">Educação</a>
+      <a href="#trajetoria">Trajetória</a>
+    </nav>
+    <a class="btn btn-2 hdr-cta" href="contato.html"
+       style="min-height:40px;padding:0 var(--s-5)">Falar comigo</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">
+      Menu <span class="burger-x" aria-hidden="true"></span>
+    </button>
+  </div>
+  <span class="hdr-fio" aria-hidden="true"></span>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <button class="menu-fechar" id="menu-fechar">Fechar</button>
+  <a href="#frentes">Atuação</a>
+  <a href="experiencias.html">Experiências</a>
+  <a href="meliponicultura.html">Meliponicultura</a>
+  <a href="#educacao">Educação</a>
+  <a href="#trajetoria">Trajetória</a>
+  <a href="contato.html">Falar comigo</a>
+</div>
+
+<main id="conteudo">
+
+<!-- ============================================================
+     == SB:HERO == claro e arejado, de propósito
+     A SouLBee tem o hero escuro e dramático. A ZG é o oposto:
+     papel, respiro e dados em mono — registro de relatório.
+     ============================================================ -->
+<section class="hero band-page">
+  <div class="container">
+    <div class="g12" style="align-items:center;row-gap:var(--s-8)">
+      <div style="grid-column:1 / span 7">
+        <span class="eyebrow">ZG Biodiversidade Aplicada Ltda.</span>
+        <h1>Camilla Zanotti Gallon</h1>
+        <p class="hero-assin">Biodiversidade, ciência e desenvolvimento rural</p>
+        <p class="lead">
+          Pesquisa, projetos e soluções que conectam conhecimento científico,
+          biodiversidade e o desenvolvimento dos territórios — e que também se
+          expressam em experiências sensoriais e na produção de méis de abelhas
+          nativas.
+        </p>
+      </div>
+
+      <div style="grid-column:9 / span 4">
+        <!-- retrato: moldura reta, sem recorte hexagonal -->
+        <figure class="moldura" style="--ratio:4/5">
+          <svg class="moldura-art" viewBox="0 0 120 150" aria-hidden="true"><use href="#art-retrato"/></svg>
+          <span class="moldura-marcas" aria-hidden="true"></span>
+          <span class="moldura-rot mono-caps">Foto · Camilla Zanotti Gallon · 4:5</span>
+        </figure>
+      </div>
+    </div>
+
+    <!-- AS TRÊS PORTAS: cada uma nomeia o COMPRADOR, não a marca.
+         Quem chega se reconhece pelo que é. -->
+    <nav class="portas" aria-label="Por onde você quer começar">
+      <a class="porta" href="contato.html?oferta=consultoria" style="--porta-ac:var(--zg-accent)">
+        <b>Projetos e consultoria</b>
+        <span>empresas, órgãos públicos, cooperativas</span>
+      </a>
+      <a class="porta" href="experiencias.html" style="--porta-ac:var(--sb-amber)">
+        <b>Experiências e degustações</b>
+        <span>restaurantes, lojas, eventos, equipes</span>
+      </a>
+      <a class="porta" href="meliponicultura.html" style="--porta-ac:var(--sb-sage)">
+        <b>Meliponicultura</b>
+        <span>formação e colônias</span>
+      </a>
+    </nav>
+  </div>
+</section>
+
+<!-- ============================================================
+     == SB:CIENCIA == a ponte que o documento pede cedo
+     ============================================================ -->
+<section class="sec band-sunken" id="ciencia">
+  <div class="container">
+    <div class="g12" style="row-gap:var(--s-6)">
+      <div style="grid-column:1 / span 6" class="reveal">
+        <span class="eyebrow">01 · Ciência que vira aplicação</span>
+        <h2 style="margin-top:var(--s-4)">A formação científica não é<br>um capítulo encerrado.</h2>
+      </div>
+      <div style="grid-column:8 / span 5" class="reveal" data-i="1">
+        <p class="lead">
+          Pesquisa em biologia, agricultura e temas correlatos construiu
+          competências que seguem em uso todo dia: formular perguntas, desenhar
+          método, operar pesquisa, analisar dados, interpretar evidência,
+          comunicar e gerir projetos.
+        </p>
+      </div>
+    </div>
+
+    <div class="trilho reveal">
+      <div class="trilho-p"><b>01</b><span>Ciência</span></div>
+      <div class="trilho-p"><b>02</b><span>Aplicação</span></div>
+      <div class="trilho-p"><b>03</b><span>Projetos</span></div>
+      <div class="trilho-p"><b>04</b><span>Educação</span></div>
+      <div class="trilho-p"><b>05</b><span>Experiências</span></div>
+      <div class="trilho-p"><b>06</b><span>Produção</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     == SB:FRENTES == três iniciativas, três identidades
+     É aqui que a paleta troca e o visitante entende que existe
+     um ecossistema coerente, com funções distintas.
+     ============================================================ -->
+<section class="sec band-page" id="frentes">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:var(--s-8)">
+      <span class="eyebrow">02 · Frentes de atuação</span>
+      <h2 style="margin-top:var(--s-4)">Um ecossistema, três funções.</h2>
+      <p class="lead" style="margin-top:var(--s-4)">
+        Iniciativas com identidade própria, ligadas por ciência, biodiversidade,
+        território e educação.
+      </p>
+    </div>
+
+    <div class="g12" style="row-gap:var(--s-5)">
+      <div style="grid-column:span 4" class="reveal" data-i="0">
+        <article class="frente" data-marca="zg" style="height:100%">
+          <span class="frente-tag">ZG Biodiversidade Aplicada</span>
+          <svg style="width:42px;height:42px;color:var(--ac-graf)" viewBox="0 0 56 56" aria-hidden="true"><use href="#g-ciencia"/></svg>
+          <h3>Ciência transformada em projetos e soluções</h3>
+          <p>
+            Pesquisa aplicada, biodiversidade e restauração, projetos
+            socioambientais, desenvolvimento rural, polinização, metodologias,
+            indicadores e consultoria técnica.
+          </p>
+          <a class="lnk" href="contato.html?oferta=consultoria">Ver como contratar</a>
+        </article>
+      </div>
+
+      <div style="grid-column:span 4" class="reveal" data-i="1">
+        <article class="frente" data-marca="soulbee" style="height:100%">
+          <span class="frente-tag">SouLBee</span>
+          <svg style="width:42px;height:42px;color:var(--ac-graf)" viewBox="0 0 48 56" aria-hidden="true"><use href="#glifo-bee"/></svg>
+          <h3>Conhecimento transformado em experiência sensorial</h3>
+          <p>
+            Degustações guiadas, harmonizações, curadoria e análise sensorial de
+            méis, terroir, concursos e eventos. A força da marca é o
+            conhecimento especializado virando experiência.
+          </p>
+          <a class="lnk" href="experiencias.html">Ver as experiências</a>
+        </article>
+      </div>
+
+      <div style="grid-column:span 4" class="reveal" data-i="2">
+        <article class="frente" data-marca="vale" style="height:100%">
+          <span class="frente-tag">Meliponário Vale do Canaã</span>
+          <svg style="width:42px;height:42px;color:var(--ac-graf)" viewBox="0 0 56 56" aria-hidden="true"><use href="#g-territorio"/></svg>
+          <h3>Conhecimento aplicado à produção e ao território</h3>
+          <p>
+            Criação e manejo de abelhas nativas, produção de méis, meliprodutos
+            e a biodiversidade associada ao sistema produtivo.
+            <span class="ph">[em vias de melipon&aacute;rio comercial]</span>
+          </p>
+          <a class="lnk" href="meliponicultura.html">Formação e colônias</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     == SB:EDUCACAO == eixo transversal, e agora com comprador
+     ============================================================ -->
+<section class="sec band-dark" id="educacao">
+  <div class="container">
+    <div class="g12" style="row-gap:var(--s-7)">
+      <div style="grid-column:1 / span 5" class="reveal">
+        <span class="eyebrow" style="color:var(--tx-on-dark-2)">03 · Educação &amp; Conhecimento</span>
+        <h2 style="margin-top:var(--s-4)">O eixo que atravessa tudo.</h2>
+        <p class="lead" style="margin-top:var(--s-5)">
+          Doutorado, pesquisa, trajetória internacional e docência não são
+          currículo: são a razão pela qual uma degustação, um curso ou um
+          projeto entregam o que entregam.
+        </p>
+        <div class="btn-row" style="margin-top:var(--s-6)">
+          <a class="btn btn-1" href="meliponicultura.html">Ver as formações</a>
+        </div>
+      </div>
+
+      <div style="grid-column:7 / span 6" class="reveal" data-i="1">
+        <div class="g12 pilares" style="--flow:0">
+          <div class="pilar" style="grid-column:span 12;--i:0">
+            <svg viewBox="0 0 56 56" aria-hidden="true"><use href="#g-educacao"/></svg>
+            <h3>Na ZG Biodiversidade Aplicada</h3>
+            <p style="max-width:48ch">
+              Cursos, formação de equipes, capacitação de produtores e técnicos,
+              metodologia científica, palestras e produção de material técnico.
+            </p>
+          </div>
+          <div class="pilar" style="grid-column:span 12;--i:1">
+            <h3>Na SouLBee</h3>
+            <p style="max-width:48ch">
+              Educação sensorial, formação sobre méis, terroir, diversidade dos
+              méis de abelhas nativas, degustação e percepção sensorial.
+            </p>
+          </div>
+          <div class="pilar" style="grid-column:span 12;--i:2">
+            <h3>No Vale do Canaã</h3>
+            <p style="max-width:48ch">
+              A dimensão prática: meliponicultura, manejo, produção e
+              transformação dos produtos da colônia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     == SB:TRAJETORIA ==
+     ============================================================ -->
+<section class="sec band-page" id="trajetoria">
+  <div class="container">
+    <div class="g12" style="row-gap:var(--s-6)">
+      <div style="grid-column:1 / span 5" class="reveal">
+        <span class="eyebrow">04 · Trajetória</span>
+        <h2 style="margin-top:var(--s-4)">Formação e atuação</h2>
+      </div>
+      <div style="grid-column:7 / span 6" class="reveal" data-i="1">
+        <p>
+          Bióloga, pesquisadora e sommelière de méis, com atuação destacada na
+          curadoria sensorial de méis de abelhas nativas brasileiras. Fundadora
+          da SouLBee e do Meliponário Vale do Canaã. Formada pelo Instituto 4e,
+          atua como jurada em concursos nacionais e internacionais. Mestrado
+          pela UFES e doutorado pela USP.
+        </p>
+        <ul class="creds" style="margin-top:var(--s-6)">
+          <li>Bióloga</li>
+          <li>Mestrado — UFES</li>
+          <li>Doutorado — USP</li>
+          <li>Sommelière de méis — Instituto 4e</li>
+          <li>Jurada em concursos nacionais e internacionais</li>
+          <li>Docente convidada — curso de sommelier de méis</li>
+        </ul>
+        <p class="mono-caps" style="color:var(--tx-2);margin-top:var(--s-5)">
+          <span class="ph">[preencher: projetos que podem ser citados sem ferir confidencialidade]</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     == SB:CTA ==
+     ============================================================ -->
+<section class="sec band-sunken" id="contato">
+  <div class="container">
+    <div class="g12" style="align-items:center;row-gap:var(--s-6)">
+      <div style="grid-column:1 / span 7" class="reveal">
+        <span class="eyebrow">05 · Contato</span>
+        <h2 style="margin-top:var(--s-4)">Por onde você quer começar?</h2>
+        <p class="lead" style="margin-top:var(--s-4)">
+          Projeto, degustação, formação ou colônias — a conversa começa no mesmo
+          lugar, e eu já chego sabendo o assunto.
+        </p>
+      </div>
+      <div style="grid-column:9 / span 4" class="reveal" data-i="1">
+        <div class="btn-row" style="flex-direction:column;align-items:stretch">
+          <a class="btn btn-1" href="contato.html">Falar comigo</a>
+          <a class="btn btn-2" href="https://instagram.com/soulbee.o"
+             target="_blank" rel="noopener noreferrer">Instagram @soulbee.o</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- == SB:FOOTER == -->
+<footer class="ft band-dark-2">
+  <div class="container">
+    <div class="g12 ft-grid">
+      <div class="ft-marca">
+        <span class="wm">
+          <span class="wm-sig" aria-hidden="true">ZG</span>
+          <span class="wm-txt">
+            <b>Camilla Zanotti Gallon</b>
+            <span>ZG Biodiversidade Aplicada</span>
+          </span>
+        </span>
+        <p>
+          Biodiversidade, ciência e desenvolvimento rural. SouLBee e Meliponário
+          Vale do Canaã são iniciativas da mesma trajetória.
+        </p>
+      </div>
+      <div class="ft-col">
+        <h4>Atuação</h4>
+        <ul>
+          <li><a href="#frentes">Frentes</a></li>
+          <li><a href="#ciencia">Ciência aplicada</a></li>
+          <li><a href="#educacao">Educação</a></li>
+          <li><a href="#trajetoria">Trajetória</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Iniciativas</h4>
+        <ul>
+          <li><a href="experiencias.html">SouLBee — experiências</a></li>
+          <li><a href="meliponicultura.html">Vale do Canaã</a></li>
+          <li><a href="meliponicultura.html#colonias">Colônias</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="contato.html">Formulário</a></li>
+          <li><a href="https://instagram.com/soulbee.o" target="_blank" rel="noopener noreferrer">@soulbee.o</a></li>
+          <li><span class="ph">[WhatsApp]</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-legal">
+      <p>Camilla Zanotti Gallon é sommelière de méis formada pelo Instituto 4e. Conteúdo técnico sujeito a revisão.</p>
+      <p>© 2026 ZG Biodiversidade Aplicada Ltda. · <span class="ph">[CNPJ]</span> · <span class="ph">[cidade, estado]</span></p>
+    </div>
+  </div>
+</footer>
+
+<noscript>
+  <div class="aviso mono-caps">
+    Alguns efeitos precisam de JavaScript, mas todo o conteúdo desta página
+    está disponível sem ele.
+  </div>
+</noscript>
+
+</div><!-- /#site -->
+<script src="js/site.js"></script>
