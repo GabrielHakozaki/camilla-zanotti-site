@@ -440,6 +440,9 @@ html,body{ background:#F7F7F4 }
   display:grid; grid-template-columns:repeat(3,1fr);
   gap:var(--s-4); margin-top:var(--s-6); align-items:stretch;
 }
+/* hero com duas frentes: duas portas lado a lado */
+.portas-2{ grid-template-columns:repeat(2,1fr) }
+
 .porta{
   display:flex; flex-direction:column; gap:var(--s-2);
   padding:var(--s-5); min-height:104px;

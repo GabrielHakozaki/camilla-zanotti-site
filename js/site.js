@@ -247,6 +247,11 @@
      para a mensagem não chegar sem contexto.
      ============================================================ */
   var OFERTAS = {
+    "empreender":                "Empreendedorismo na meliponicultura",
+    "empreender-viabilidade":    "Meliponicultura — viabilidade e plano de negócio",
+    "empreender-especies":       "Meliponicultura — espécies e região de ocorrência",
+    "empreender-regularizacao":  "Meliponicultura — caminho da regularização",
+    "empreender-mercado":        "Meliponicultura — produto, mercado e preço",
     "restauracao":               "Projeto de restauração florestal",
     "restauracao-diagnostico":   "Restauração — diagnóstico e planejamento de áreas",
     "restauracao-programas":     "Restauração — desenho de projetos e programas",
