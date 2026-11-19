@@ -32,21 +32,23 @@
 
 <span class="sentinela" id="sentinela" aria-hidden="true"></span>
 
-<header class="hdr" id="hdr">
+<header class="hdr" id="hdr" data-marca="zg">
   <div class="container hdr-in">
     <a class="wm" href="index.html" aria-label="Camilla Zanotti Gallon, início">
       <span class="wm-sig" aria-hidden="true">ZG</span>
       <span class="wm-txt">
         <b>Camilla Zanotti Gallon</b>
-        <span>ZG Biodiversidade Aplicada</span>
+        <span>Restauração florestal</span>
       </span>
     </a>
     <nav class="hdr-nav" aria-label="Navegação principal">
-      <a href="index.html">Início</a>
-      <a href="experiencias.html">Experiências</a>
-      <a href="meliponicultura.html">Meliponicultura</a>
-      <a href="contato.html">Contato</a>
+      <a href="index.html#consultoria">Consultoria</a>
+      <a href="index.html#metodo">Como trabalho</a>
+      <a href="projetos.html">Projetos e experiências</a>
+      <a href="index.html#trajetoria">Trajetória</a>
     </nav>
+    <a class="btn btn-1 hdr-cta" href="contato.html?oferta=restauracao"
+       style="min-height:40px;padding:0 var(--s-5)">Propor um projeto</a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">
       Menu <span class="burger-x" aria-hidden="true"></span>
     </button>
@@ -54,12 +56,13 @@
   <span class="hdr-fio" aria-hidden="true"></span>
 </header>
 
-<div class="menu" id="menu" hidden>
+<div class="menu" id="menu" hidden data-marca="zg">
   <button class="menu-fechar" id="menu-fechar">Fechar</button>
-  <a href="index.html">Início</a>
-  <a href="experiencias.html">Experiências</a>
-  <a href="meliponicultura.html">Meliponicultura</a>
-  <a href="contato.html">Contato</a>
+  <a href="index.html#consultoria">Consultoria</a>
+  <a href="index.html#metodo">Como trabalho</a>
+  <a href="projetos.html">Projetos e experiências</a>
+  <a href="index.html#trajetoria">Trajetória</a>
+  <a href="contato.html?oferta=restauracao">Propor um projeto</a>
 </div>
 
 <main id="conteudo">
@@ -72,8 +75,9 @@
         <span class="eyebrow">Contato</span>
         <h1 style="margin-top:var(--s-4)">Vamos conversar.</h1>
         <p class="lead" style="margin-top:var(--s-5)">
-          Projeto, degustação, formação ou colônias — conte o que você precisa e
-          eu volto com a proposta.
+          Conte em que etapa está o seu projeto de restauração — diagnóstico,
+          proposta, implantação ou monitoramento — e eu volto com uma proposta
+          técnica. Também atendo por aqui degustações, formações e colônias.
         </p>
 
         <!-- preenchido pelo JS a partir de ?oferta= -->
@@ -98,13 +102,22 @@
             </div>
           </div>
           <div class="campo">
-            <label for="ct-org">Empresa ou instituição</label>
-            <input id="ct-org" name="organizacao" type="text" placeholder="Opcional">
+            <label for="ct-org">Instituição, órgão ou programa</label>
+            <input id="ct-org" name="organizacao" type="text" placeholder="Ex.: secretaria, ONG, programa de restauração">
           </div>
           <div class="campo">
             <label for="campo-assunto">Sobre o que</label>
             <select id="campo-assunto" name="assunto">
               <option value="">Selecione</option>
+              <optgroup label="Consultoria em restauração florestal">
+                <option>Projeto de restauração florestal</option>
+                <option>Restauração — diagnóstico e planejamento de áreas</option>
+                <option>Restauração — desenho de projetos e programas</option>
+                <option>Restauração — polinizadores e biodiversidade funcional</option>
+                <option>Restauração — monitoramento e indicadores</option>
+                <option>Restauração — capacitação de equipes e comunidades</option>
+              </optgroup>
+              <optgroup label="Projetos e experiências">
               <option>Degustação guiada para equipes e eventos</option>
               <option>Harmonização de méis</option>
               <option>Curadoria e análise sensorial de méis</option>
@@ -113,7 +126,7 @@
               <option>Formação em meliponicultura — manejo</option>
               <option>Formação em análise sensorial de méis</option>
               <option>Lista de espera — colônias de abelhas nativas</option>
-              <option>Projetos e consultoria técnica</option>
+              </optgroup>
               <option>Outro assunto</option>
             </select>
           </div>
@@ -187,10 +200,10 @@
         <p>Biodiversidade, ciência e desenvolvimento rural.</p>
       </div>
       <div class="ft-col">
-        <h4>Atuação</h4>
+        <h4>Consultoria</h4>
         <ul>
-          <li><a href="index.html#frentes">Frentes</a></li>
-          <li><a href="index.html#educacao">Educação</a></li>
+          <li><a href="index.html#consultoria">Linhas de atuação</a></li>
+          <li><a href="index.html#metodo">Como trabalho</a></li>
           <li><a href="index.html#trajetoria">Trajetória</a></li>
         </ul>
       </div>

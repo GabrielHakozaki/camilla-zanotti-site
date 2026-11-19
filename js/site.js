@@ -247,6 +247,12 @@
      para a mensagem não chegar sem contexto.
      ============================================================ */
   var OFERTAS = {
+    "restauracao":               "Projeto de restauração florestal",
+    "restauracao-diagnostico":   "Restauração — diagnóstico e planejamento de áreas",
+    "restauracao-programas":     "Restauração — desenho de projetos e programas",
+    "restauracao-polinizadores": "Restauração — polinizadores e biodiversidade funcional",
+    "restauracao-monitoramento": "Restauração — monitoramento e indicadores",
+    "restauracao-capacitacao":   "Restauração — capacitação de equipes e comunidades",
     "degustacao-equipes":  "Degustação guiada para equipes e eventos",
     "harmonizacao":        "Harmonização de méis",
     "curadoria":           "Curadoria e análise sensorial de méis",
@@ -255,7 +261,7 @@
     "formacao-manejo":     "Formação em meliponicultura — manejo",
     "formacao-sensorial":  "Formação em análise sensorial de méis",
     "colonias":            "Lista de espera — colônias de abelhas nativas",
-    "consultoria":         "Projetos e consultoria técnica"
+    "consultoria":         "Projeto de restauração florestal"   /* links antigos */
   };
 
   function initContexto() {

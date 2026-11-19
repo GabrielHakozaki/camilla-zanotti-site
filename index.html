@@ -8,63 +8,45 @@
 <link rel="stylesheet" href="css/site.css">
 
 <!-- ============================================================
-     == SB:HOME == Camilla Zanotti Gallon / ZG Biodiversidade
+     == SB:HOME == Consultoria em restauração florestal
      ============================================================
-     Índice do site:  grep -rn "== SB:" .
-     Esta é a página principal. Ela NÃO tem doctype/html/head/body
-     de propósito: no alvo publicado o conteúdo é embrulhado pelo
-     publicador. As demais páginas são documentos completos. O CSS
-     é agnóstico de modo justamente por causa dessa assimetria.
+     Objetivo principal do site: consultoria em restauração
+     florestal para órgãos públicos, ONGs e programas. SouLBee,
+     Meliponário Vale do Canaã e as formações entram como
+     projetos e experiências que SUSTENTAM a consultoria.
 
-     Conteúdo é HTML estático, não gerado por JS — assim nenhuma
-     seção fica vazia se o JavaScript falhar. O JS só faz
-     comportamento.
+     A ponte: abelha nativa é polinização, e polinização é
+     serviço ecossistêmico de restauração.
+
+     Sem DOCTYPE/html/head/body de propósito: no alvo publicado o
+     conteúdo é embrulhado. O CSS é agnóstico de modo.
+     Índice do site:  grep -rn "== SB:" .
+
+     NADA INVENTADO: nenhum projeto, hectare, financiador ou
+     município. O que falta está entre [colchetes].
      ============================================================ -->
 
 <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
-  <!-- retrato: fantasma de moldura. Rosto humano NUNCA recortado
-       em hexágono — em produto é elegante, em retrato mutila. -->
   <symbol id="art-retrato" viewBox="0 0 120 150" fill="none" stroke="currentColor"
           stroke-width="1.25" stroke-linejoin="round" vector-effect="non-scaling-stroke">
     <circle cx="60" cy="54" r="26"/>
     <path d="M18 150 C18 116 36 96 60 96 C84 96 102 116 102 150"/>
     <path d="M44 130 C49 123 52 118 52 112 M76 130 C71 123 68 118 68 112" opacity=".45"/>
   </symbol>
-
-  <!-- glifos dos pilares: círculo + hexágono + linha, mesmo peso
-       de traço. Nada de frasco, microscópio, garfo e faca. -->
-  <symbol id="g-ciencia" viewBox="0 0 56 56" fill="none" stroke="currentColor"
+  <symbol id="g-orgao" viewBox="0 0 56 56" fill="none" stroke="currentColor"
           stroke-width="1.25" stroke-linejoin="round" vector-effect="non-scaling-stroke">
-    <path d="M16 14 L28 7 L40 14 L40 28 L28 35 L16 28 Z"/>
-    <path d="M16 14 L28 21 L40 14 M28 21 L28 35" opacity=".4"/>
-    <path d="M8 46 L48 46"/><path d="M8 42 L8 50 M28 42 L28 50 M48 42 L48 50"/>
-    <path d="M18 44 L18 48 M38 44 L38 48" opacity=".45"/>
+    <path d="M8 20 L28 8 L48 20 Z"/><path d="M12 22 L12 44 M22 22 L22 44 M34 22 L34 44 M44 22 L44 44"/>
+    <path d="M6 48 L50 48"/>
   </symbol>
-  <symbol id="g-territorio" viewBox="0 0 56 56" fill="none" stroke="currentColor"
+  <symbol id="g-ong" viewBox="0 0 56 56" fill="none" stroke="currentColor"
           stroke-width="1.25" stroke-linejoin="round" vector-effect="non-scaling-stroke">
-    <path d="M6 40 C16 30 22 42 30 34 C38 26 44 36 50 30"/>
-    <path d="M6 48 C16 38 22 50 30 42 C38 34 44 44 50 38" opacity=".45"/>
-    <circle cx="30" cy="14" r="7"/><path d="M30 21 L30 30"/>
-    <path d="M23 9 L37 9" opacity=".5"/>
+    <circle cx="19" cy="18" r="6"/><circle cx="37" cy="18" r="6"/>
+    <path d="M8 44 C8 33 13 28 19 28 C25 28 28 31 28 35 C28 31 31 28 37 28 C43 28 48 33 48 44"/>
   </symbol>
-  <symbol id="g-educacao" viewBox="0 0 56 56" fill="none" stroke="currentColor"
+  <symbol id="g-programa" viewBox="0 0 56 56" fill="none" stroke="currentColor"
           stroke-width="1.25" stroke-linejoin="round" vector-effect="non-scaling-stroke">
-    <path d="M6 16 L28 6 L50 16 L28 26 Z"/>
-    <path d="M14 20 L14 36 C14 36 20 42 28 42 C36 42 42 36 42 36 L42 20"/>
-    <path d="M50 16 L50 32" opacity=".55"/>
-  </symbol>
-
-  <!-- abelha compacta: só para a marca SouLBee dentro do bloco de
-       frentes. A ZG é deliberadamente SEM abelha. -->
-  <symbol id="glifo-bee" viewBox="0 0 48 56" fill="none" stroke="currentColor"
-          stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke">
-    <path d="M23 17 C15 11 5 14 3 22 C2 28 9 32 16 30 C22 28 25 23 23 17 Z"/>
-    <path d="M25 17 C33 11 43 14 45 22 C46 28 39 32 32 30 C26 28 23 23 25 17 Z"/>
-    <ellipse cx="24" cy="20" rx="7" ry="6.5"/>
-    <path d="M24 26 C30 26 31 33 30 39 C29 46 26 52 24 53 C22 52 19 46 18 39 C17 33 18 26 24 26 Z"/>
-    <path d="M18 32 H30 M18 39 H30" opacity=".6"/>
-    <ellipse cx="24" cy="10" rx="5.4" ry="4.8"/>
-    <path d="M21 6 C19 3 18 2 16 0 M27 6 C29 3 30 2 32 0"/>
+    <path d="M8 46 L8 10 M8 46 L50 46"/>
+    <path d="M14 38 L24 28 L32 33 L46 16"/><circle cx="46" cy="16" r="2.4"/>
   </symbol>
 </svg>
 
@@ -72,7 +54,6 @@
 
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 
-<!-- faixa de mockup — APAGAR no lançamento -->
 <div class="aviso mono-caps">
   Mockup para aprovação · textos e imagens sujeitos a revisão ·
   trechos entre <b>[colchetes]</b> aguardam informação
@@ -80,25 +61,24 @@
 
 <span class="sentinela" id="sentinela" aria-hidden="true"></span>
 
-<!-- == SB:HEADER == -->
-<header class="hdr" id="hdr">
+<!-- == SB:HEADER == navegação única em todas as páginas -->
+<header class="hdr" id="hdr" data-marca="zg">
   <div class="container hdr-in">
     <a class="wm" href="index.html" aria-label="Camilla Zanotti Gallon, início">
       <span class="wm-sig" aria-hidden="true">ZG</span>
       <span class="wm-txt">
         <b>Camilla Zanotti Gallon</b>
-        <span>ZG Biodiversidade Aplicada</span>
+        <span>Restauração florestal</span>
       </span>
     </a>
     <nav class="hdr-nav" aria-label="Navegação principal">
-      <a href="#frentes">Atuação</a>
-      <a href="experiencias.html">Experiências</a>
-      <a href="meliponicultura.html">Meliponicultura</a>
-      <a href="#educacao">Educação</a>
+      <a href="#consultoria">Consultoria</a>
+      <a href="#metodo">Como trabalho</a>
+      <a href="projetos.html">Projetos e experiências</a>
       <a href="#trajetoria">Trajetória</a>
     </nav>
-    <a class="btn btn-2 hdr-cta" href="contato.html"
-       style="min-height:40px;padding:0 var(--s-5)">Falar comigo</a>
+    <a class="btn btn-1 hdr-cta" href="contato.html?oferta=restauracao"
+       style="min-height:40px;padding:0 var(--s-5)">Propor um projeto</a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">
       Menu <span class="burger-x" aria-hidden="true"></span>
     </button>
@@ -106,40 +86,38 @@
   <span class="hdr-fio" aria-hidden="true"></span>
 </header>
 
-<div class="menu" id="menu" hidden>
+<div class="menu" id="menu" hidden data-marca="zg">
   <button class="menu-fechar" id="menu-fechar">Fechar</button>
-  <a href="#frentes">Atuação</a>
-  <a href="experiencias.html">Experiências</a>
-  <a href="meliponicultura.html">Meliponicultura</a>
-  <a href="#educacao">Educação</a>
+  <a href="#consultoria">Consultoria</a>
+  <a href="#metodo">Como trabalho</a>
+  <a href="projetos.html">Projetos e experiências</a>
   <a href="#trajetoria">Trajetória</a>
-  <a href="contato.html">Falar comigo</a>
+  <a href="contato.html?oferta=restauracao">Propor um projeto</a>
 </div>
 
 <main id="conteudo">
 
 <!-- ============================================================
-     == SB:HERO == claro e arejado, de propósito
-     A SouLBee tem o hero escuro e dramático. A ZG é o oposto:
-     papel, respiro e dados em mono — registro de relatório.
+     == SB:HERO ==
      ============================================================ -->
 <section class="hero band-page">
   <div class="container">
     <div class="g12" style="align-items:center;row-gap:var(--s-8)">
       <div style="grid-column:1 / span 7">
-        <span class="eyebrow">ZG Biodiversidade Aplicada Ltda.</span>
+        <span class="eyebrow">ZG Biodiversidade Aplicada · Consultoria</span>
         <h1>Camilla Zanotti Gallon</h1>
-        <p class="hero-assin">Biodiversidade, ciência e desenvolvimento rural</p>
+        <p class="hero-assin">Restauração florestal com base científica</p>
         <p class="lead">
-          Pesquisa, projetos e soluções que conectam conhecimento científico,
-          biodiversidade e o desenvolvimento dos territórios — e que também se
-          expressam em experiências sensoriais e na produção de méis de abelhas
-          nativas.
+          Consultoria para órgãos públicos, ONGs e programas de restauração —
+          do diagnóstico ao monitoramento, com foco em recuperar a função do
+          ecossistema, e não só a cobertura.
         </p>
+        <div class="btn-row">
+          <a class="btn btn-1" href="contato.html?oferta=restauracao">Propor um projeto</a>
+          <a class="btn btn-2" href="projetos.html">Ver projetos e experiências</a>
+        </div>
       </div>
-
       <div style="grid-column:9 / span 4">
-        <!-- retrato: moldura reta, sem recorte hexagonal -->
         <figure class="moldura" style="--ratio:4/5">
           <svg class="moldura-art" viewBox="0 0 120 150" aria-hidden="true"><use href="#art-retrato"/></svg>
           <span class="moldura-marcas" aria-hidden="true"></span>
@@ -147,221 +125,363 @@
         </figure>
       </div>
     </div>
-
-    <!-- AS TRÊS PORTAS: cada uma nomeia o COMPRADOR, não a marca.
-         Quem chega se reconhece pelo que é. -->
-    <nav class="portas" aria-label="Por onde você quer começar">
-      <a class="porta" href="contato.html?oferta=consultoria" style="--porta-ac:var(--zg-accent)">
-        <b>Projetos e consultoria</b>
-        <span>empresas, órgãos públicos, cooperativas</span>
-      </a>
-      <a class="porta" href="experiencias.html" style="--porta-ac:var(--sb-amber)">
-        <b>Experiências e degustações</b>
-        <span>restaurantes, lojas, eventos, equipes</span>
-      </a>
-      <a class="porta" href="meliponicultura.html" style="--porta-ac:var(--sb-sage)">
-        <b>Meliponicultura</b>
-        <span>formação e colônias</span>
-      </a>
-    </nav>
   </div>
 </section>
 
 <!-- ============================================================
-     == SB:CIENCIA == a ponte que o documento pede cedo
+     == SB:PARAQUEM ==
      ============================================================ -->
-<section class="sec band-sunken" id="ciencia">
+<section class="sec band-sunken" id="para-quem">
   <div class="container">
-    <div class="g12" style="row-gap:var(--s-6)">
+    <div class="g12" style="row-gap:var(--s-6);margin-bottom:var(--s-8)">
       <div style="grid-column:1 / span 6" class="reveal">
-        <span class="eyebrow">01 · Ciência que vira aplicação</span>
-        <h2 style="margin-top:var(--s-4)">A formação científica não é<br>um capítulo encerrado.</h2>
+        <span class="eyebrow">01 · Para quem</span>
+        <h2 style="margin-top:var(--s-4)">Programas que plantam muito e recuperam pouco.</h2>
       </div>
       <div style="grid-column:8 / span 5" class="reveal" data-i="1">
         <p class="lead">
-          Pesquisa em biologia, agricultura e temas correlatos construiu
-          competências que seguem em uso todo dia: formular perguntas, desenhar
-          método, operar pesquisa, analisar dados, interpretar evidência,
-          comunicar e gerir projetos.
+          Cobertura vegetal é o começo da restauração, não o fim. Uma área só
+          está de fato recuperada quando volta a funcionar: quando as plantas
+          são polinizadas, frutificam, dispersam sementes e se regeneram
+          sozinhas.
+        </p>
+      </div>
+    </div>
+
+    <div class="g12 pilares">
+      <div class="pilar reveal" data-i="0" style="grid-column:span 4">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><use href="#g-orgao"/></svg>
+        <h3>Órgãos públicos</h3>
+        <p>Programas de restauração, políticas ambientais e projetos que precisam de desenho técnico e indicadores defensáveis.</p>
+      </div>
+      <div class="pilar reveal" data-i="1" style="grid-column:span 4">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><use href="#g-ong"/></svg>
+        <h3>ONGs e organizações socioambientais</h3>
+        <p>Projetos de campo, propostas para editais e equipes que precisam de método e capacitação.</p>
+      </div>
+      <div class="pilar reveal" data-i="2" style="grid-column:span 4">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><use href="#g-programa"/></svg>
+        <h3>Programas e fundos</h3>
+        <p>Iniciativas de restauração em escala que precisam monitorar resultado ecológico, e não só área plantada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     == SB:CONSULTORIA == as linhas de atuação
+     Propostas por nós, a CONFIRMAR com a Camilla.
+     ============================================================ -->
+<section class="sec band-page" id="consultoria">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:var(--s-8);max-width:64ch">
+      <span class="eyebrow">02 · Linhas de atuação</span>
+      <h2 style="margin-top:var(--s-4)">O que a consultoria entrega.</h2>
+      <p class="lead" style="margin-top:var(--s-4)">
+        Cinco frentes que podem ser contratadas juntas ou separadas, conforme a
+        etapa do projeto.
+        <span class="ph">[confirmar: linhas, escopos e entregáveis]</span>
+      </p>
+    </div>
+
+    <div class="ofertas">
+
+      <article class="oferta reveal" data-i="0">
+        <div class="oferta-topo">
+          <span class="oferta-tag">01 · diagnóstico</span>
+          <h3>Diagnóstico e planejamento de áreas</h3>
+          <p class="oferta-sub">Entender a área antes de decidir o que plantar — e onde vale mais a pena investir.</p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Entregáveis</dt><dd><ul>
+              <li>Levantamento da situação ambiental das áreas</li>
+              <li>Priorização das áreas para restauração</li>
+              <li>Recomendação de técnicas e de espécies</li>
+            </ul></dd></div>
+            <div><dt>Escopo</dt><dd><span class="ph">[confirmar]</span></dd></div>
+          </dl>
+          <div class="oferta-preco"><b>Sob proposta</b></div>
+          <a class="btn btn-1" href="contato.html?oferta=restauracao-diagnostico">Conversar sobre isto</a>
+        </div>
+      </article>
+
+      <article class="oferta reveal" data-i="1">
+        <div class="oferta-topo">
+          <span class="oferta-tag">02 · projetos</span>
+          <h3>Desenho de projetos e programas</h3>
+          <p class="oferta-sub">Estrutura técnica para projetos e programas de restauração, incluindo apoio a propostas para editais e financiamentos.</p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Entregáveis</dt><dd><ul>
+              <li>Objetivos, metas e cronograma técnico</li>
+              <li>Escolha de métodos e desenho experimental</li>
+              <li>Apoio técnico a propostas e relatórios</li>
+            </ul></dd></div>
+            <div><dt>Escopo</dt><dd><span class="ph">[confirmar]</span></dd></div>
+          </dl>
+          <div class="oferta-preco"><b>Sob proposta</b></div>
+          <a class="btn btn-1" href="contato.html?oferta=restauracao-programas">Conversar sobre isto</a>
+        </div>
+      </article>
+
+      <article class="oferta reveal" data-i="2">
+        <div class="oferta-topo">
+          <span class="oferta-tag">03 · diferencial</span>
+          <h3>Restauração com polinizadores e biodiversidade funcional</h3>
+          <p class="oferta-sub">Incluir quem faz a floresta se reproduzir: espécies atrativas, abelhas nativas e conexão entre fragmentos.</p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Entregáveis</dt><dd><ul>
+              <li>Composição de espécies pensada para polinizadores</li>
+              <li>Abelhas nativas como componente do sistema</li>
+              <li>Estratégias de conexão entre fragmentos</li>
+            </ul></dd></div>
+            <div><dt>Base</dt><dd>Experiência prática com meliponicultura no Meliponário Vale do Canaã · <a class="lnk lnk-ac" href="projetos.html">ver projetos</a></dd></div>
+          </dl>
+          <div class="oferta-preco"><b>Sob proposta</b></div>
+          <a class="btn btn-1" href="contato.html?oferta=restauracao-polinizadores">Conversar sobre isto</a>
+        </div>
+      </article>
+
+      <article class="oferta reveal" data-i="3">
+        <div class="oferta-topo">
+          <span class="oferta-tag">04 · monitoramento</span>
+          <h3>Monitoramento e indicadores</h3>
+          <p class="oferta-sub">Saber se a restauração está funcionando — com dados que o financiador entende e aceita.</p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Entregáveis</dt><dd><ul>
+              <li>Protocolos de monitoramento de campo</li>
+              <li>Indicadores ecológicos de resultado</li>
+              <li>Relatórios técnicos para financiadores</li>
+            </ul></dd></div>
+            <div><dt>Escopo</dt><dd><span class="ph">[confirmar]</span></dd></div>
+          </dl>
+          <div class="oferta-preco"><b>Sob proposta</b></div>
+          <a class="btn btn-1" href="contato.html?oferta=restauracao-monitoramento">Conversar sobre isto</a>
+        </div>
+      </article>
+
+      <article class="oferta reveal" data-i="4">
+        <div class="oferta-topo">
+          <span class="oferta-tag">05 · capacitação</span>
+          <h3>Capacitação de equipes e comunidades</h3>
+          <p class="oferta-sub">Programas que continuam de pé depois que a consultoria acaba, porque quem fica sabe o que fazer.</p>
+        </div>
+        <div class="oferta-corpo">
+          <dl class="ficha">
+            <div><dt>Para quem</dt><dd>Equipes técnicas, viveiristas, agricultores, coletores de sementes, comunidades locais</dd></div>
+            <div><dt>Base</dt><dd>Formações em meliponicultura e educação sensorial já realizadas · <a class="lnk lnk-ac" href="meliponicultura.html#formacao">ver formações</a></dd></div>
+          </dl>
+          <div class="oferta-preco"><b>Sob proposta</b></div>
+          <a class="btn btn-1" href="contato.html?oferta=restauracao-capacitacao">Conversar sobre isto</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     == SB:METODO ==
+     ============================================================ -->
+<section class="sec band-sunken" id="metodo">
+  <div class="container">
+    <div class="g12" style="row-gap:var(--s-6)">
+      <div style="grid-column:1 / span 6" class="reveal">
+        <span class="eyebrow">03 · Como trabalho</span>
+        <h2 style="margin-top:var(--s-4)">Método de pesquisa aplicado à restauração.</h2>
+      </div>
+      <div style="grid-column:8 / span 5" class="reveal" data-i="1">
+        <p class="lead">
+          Formular a pergunta certa, desenhar o método, medir e interpretar
+          evidência: a mesma sequência da pesquisa científica, usada para
+          decidir e acompanhar cada etapa.
         </p>
       </div>
     </div>
 
     <div class="trilho reveal">
-      <div class="trilho-p"><b>01</b><span>Ciência</span></div>
-      <div class="trilho-p"><b>02</b><span>Aplicação</span></div>
-      <div class="trilho-p"><b>03</b><span>Projetos</span></div>
-      <div class="trilho-p"><b>04</b><span>Educação</span></div>
-      <div class="trilho-p"><b>05</b><span>Experiências</span></div>
-      <div class="trilho-p"><b>06</b><span>Produção</span></div>
+      <div class="trilho-p"><b>01</b><span>Diagnóstico</span><p>o que a área tem, o que perdeu e o que limita a regeneração</p></div>
+      <div class="trilho-p"><b>02</b><span>Planejamento</span><p>metas, técnicas, espécies e indicadores definidos antes do plantio</p></div>
+      <div class="trilho-p"><b>03</b><span>Implantação assistida</span><p>acompanhamento técnico das decisões de campo</p></div>
+      <div class="trilho-p"><b>04</b><span>Monitoramento</span><p>dados de resultado ecológico, não só de área plantada</p></div>
+      <div class="trilho-p"><b>05</b><span>Capacitação</span><p>quem fica no território aprende a continuar</p></div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     == SB:FRENTES == três iniciativas, três identidades
-     É aqui que a paleta troca e o visitante entende que existe
-     um ecossistema coerente, com funções distintas.
+     == SB:DIFERENCIAL == a ponte com os polinizadores
      ============================================================ -->
-<section class="sec band-page" id="frentes">
+<section class="sec band-page" id="diferencial">
   <div class="container">
-    <div class="reveal" style="margin-bottom:var(--s-8)">
-      <span class="eyebrow">02 · Frentes de atuação</span>
-      <h2 style="margin-top:var(--s-4)">Um ecossistema, três funções.</h2>
-      <p class="lead" style="margin-top:var(--s-4)">
-        Iniciativas com identidade própria, ligadas por ciência, biodiversidade,
-        território e educação.
-      </p>
+    <div class="g12" style="row-gap:var(--s-6)">
+      <div style="grid-column:1 / span 6" class="reveal">
+        <span class="eyebrow">04 · O diferencial</span>
+        <h2 style="margin-top:var(--s-4)">Restaurar função,<br>não só cobertura.</h2>
+      </div>
+      <div style="grid-column:8 / span 5" class="reveal" data-i="1">
+        <p class="lead">
+          Muitas espécies plantadas dependem de polinizadores para frutificar e
+          se regenerar. Restauração que ignora as abelhas nativas pode chegar a
+          uma área verde que não se sustenta sozinha.
+        </p>
+      </div>
+    </div>
+
+    <!-- esquema didático da sucessão ecológica; não é dado de campo -->
+    <figure class="sucessao reveal" aria-labelledby="sucessao-leg">
+      <svg viewBox="0 0 900 300" role="img" aria-label="Esquema da sucessão ecológica: espécies pioneiras, secundárias e de clímax, ligadas por rotas de polinizadores">
+        <path d="M20 272 H880" stroke="currentColor" stroke-opacity=".4"/>
+        <g fill="var(--zg-accent-pale)" stroke="currentColor" stroke-width="1.2">
+          <!-- pioneiras: baixas e espaçadas -->
+          <path d="M70 272 V214"/><circle cx="70" cy="200" r="16"/>
+          <path d="M150 272 V222"/><circle cx="150" cy="208" r="14"/>
+          <path d="M230 272 V206"/><circle cx="230" cy="190" r="18"/>
+          <!-- secundárias -->
+          <path d="M360 272 V168"/><circle cx="360" cy="146" r="26"/>
+          <path d="M440 272 V150"/><circle cx="440" cy="126" r="30"/>
+          <path d="M520 272 V176"/><circle cx="520" cy="154" r="24"/>
+          <!-- clímax: alta e em camadas -->
+          <path d="M650 272 V96"/><circle cx="650" cy="72" r="36"/>
+          <path d="M740 272 V78"/><circle cx="740" cy="52" r="40"/>
+          <path d="M830 272 V104"/><circle cx="830" cy="80" r="34"/>
+          <path d="M695 272 V200"/><circle cx="695" cy="186" r="16"/>
+          <path d="M785 272 V210"/><circle cx="785" cy="196" r="14"/>
+        </g>
+        <!-- rotas de polinizadores ligando os estágios -->
+        <g fill="none" stroke="var(--tx-ac)" stroke-width="1.4" stroke-dasharray="3 6">
+          <path d="M230 186 C 290 110, 380 100, 440 120"/>
+          <path d="M440 120 C 540 40, 640 30, 740 48"/>
+          <path d="M150 206 C 250 230, 300 170, 360 146"/>
+          <path d="M520 150 C 600 140, 640 160, 695 182"/>
+        </g>
+        <g fill="var(--tx-ac)">
+          <circle cx="335" cy="106" r="3.5"/><circle cx="590" cy="44" r="3.5"/>
+          <circle cx="262" cy="196" r="3.5"/><circle cx="612" cy="150" r="3.5"/>
+        </g>
+      </svg>
+      <figcaption class="sucessao-leg" id="sucessao-leg">
+        <div><b>Pioneiras</b><p>Crescem rápido, abrem caminho e sombreiam o solo.</p></div>
+        <div><b>Secundárias</b><p>Ocupam o espaço criado e diversificam a estrutura.</p></div>
+        <div><b>Clímax</b><p>Floresta madura. As linhas tracejadas são polinizadores: sem eles, os estágios não se conectam.</p></div>
+      </figcaption>
+    </figure>
+    <p class="mono-caps" style="color:var(--tx-2);margin-top:var(--s-4)">Esquema didático, sem escala.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     == SB:PROJETOS == prévia do portfólio
+     ============================================================ -->
+<section class="sec band-dark" id="projetos">
+  <div class="container">
+    <div class="g12" style="row-gap:var(--s-6);margin-bottom:var(--s-8)">
+      <div style="grid-column:1 / span 6" class="reveal">
+        <span class="eyebrow">05 · Projetos e experiências</span>
+        <h2 style="margin-top:var(--s-4)">O que sustenta a consultoria.</h2>
+      </div>
+      <div style="grid-column:8 / span 5" class="reveal" data-i="1">
+        <p class="lead">
+          Projetos de campo, um meliponário em funcionamento e formações já
+          realizadas — cada um mostra uma parte do que a consultoria entrega.
+        </p>
+      </div>
     </div>
 
     <div class="g12" style="row-gap:var(--s-5)">
       <div style="grid-column:span 4" class="reveal" data-i="0">
-        <article class="frente" data-marca="zg" style="height:100%">
-          <span class="frente-tag">ZG Biodiversidade Aplicada</span>
-          <svg style="width:42px;height:42px;color:var(--ac-graf)" viewBox="0 0 56 56" aria-hidden="true"><use href="#g-ciencia"/></svg>
-          <h3>Ciência transformada em projetos e soluções</h3>
-          <p>
-            Pesquisa aplicada, biodiversidade e restauração, projetos
-            socioambientais, desenvolvimento rural, polinização, metodologias,
-            indicadores e consultoria técnica.
-          </p>
-          <a class="lnk" href="contato.html?oferta=consultoria">Ver como contratar</a>
+        <article class="frente" style="height:100%;background:transparent;border-color:var(--ln-dark)">
+          <span class="frente-tag">Restauração</span>
+          <h3>Projetos de restauração</h3>
+          <p><span class="ph">[preencher: projetos que podem ser citados sem ferir confidencialidade]</span></p>
+          <a class="lnk" href="projetos.html#restauracao">Ver projetos</a>
         </article>
       </div>
-
       <div style="grid-column:span 4" class="reveal" data-i="1">
-        <article class="frente" data-marca="soulbee" style="height:100%">
-          <span class="frente-tag">SouLBee</span>
-          <svg style="width:42px;height:42px;color:var(--ac-graf)" viewBox="0 0 48 56" aria-hidden="true"><use href="#glifo-bee"/></svg>
-          <h3>Conhecimento transformado em experiência sensorial</h3>
-          <p>
-            Degustações guiadas, harmonizações, curadoria e análise sensorial de
-            méis, terroir, concursos e eventos. A força da marca é o
-            conhecimento especializado virando experiência.
-          </p>
-          <a class="lnk" href="experiencias.html">Ver as experiências</a>
+        <article class="frente" style="height:100%;background:transparent;border-color:var(--ln-dark)">
+          <span class="frente-tag">Polinizadores</span>
+          <h3>Meliponário Vale do Canaã</h3>
+          <p>Manejo prático de abelhas nativas: o conhecimento de campo por trás da restauração com polinizadores.</p>
+          <a class="lnk" href="projetos.html#vale-do-canaa">Ver o case</a>
         </article>
       </div>
-
       <div style="grid-column:span 4" class="reveal" data-i="2">
-        <article class="frente" data-marca="vale" style="height:100%">
-          <span class="frente-tag">Meliponário Vale do Canaã</span>
-          <svg style="width:42px;height:42px;color:var(--ac-graf)" viewBox="0 0 56 56" aria-hidden="true"><use href="#g-territorio"/></svg>
-          <h3>Conhecimento aplicado à produção e ao território</h3>
-          <p>
-            Criação e manejo de abelhas nativas, produção de méis, meliprodutos
-            e a biodiversidade associada ao sistema produtivo.
-            <span class="ph">[em vias de melipon&aacute;rio comercial]</span>
-          </p>
-          <a class="lnk" href="meliponicultura.html">Formação e colônias</a>
+        <article class="frente" style="height:100%;background:transparent;border-color:var(--ln-dark)">
+          <span class="frente-tag">Capacitação</span>
+          <h3>Formações e SouLBee</h3>
+          <p>Cursos de meliponicultura e educação sensorial: experiência em capacitar e em comunicar biodiversidade.</p>
+          <a class="lnk" href="projetos.html#formacao">Ver o case</a>
         </article>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============================================================
-     == SB:EDUCACAO == eixo transversal, e agora com comprador
-     ============================================================ -->
-<section class="sec band-dark" id="educacao">
-  <div class="container">
-    <div class="g12" style="row-gap:var(--s-7)">
-      <div style="grid-column:1 / span 5" class="reveal">
-        <span class="eyebrow" style="color:var(--tx-on-dark-2)">03 · Educação &amp; Conhecimento</span>
-        <h2 style="margin-top:var(--s-4)">O eixo que atravessa tudo.</h2>
-        <p class="lead" style="margin-top:var(--s-5)">
-          Doutorado, pesquisa, trajetória internacional e docência não são
-          currículo: são a razão pela qual uma degustação, um curso ou um
-          projeto entregam o que entregam.
-        </p>
-        <div class="btn-row" style="margin-top:var(--s-6)">
-          <a class="btn btn-1" href="meliponicultura.html">Ver as formações</a>
-        </div>
-      </div>
-
-      <div style="grid-column:7 / span 6" class="reveal" data-i="1">
-        <div class="g12 pilares" style="--flow:0">
-          <div class="pilar" style="grid-column:span 12;--i:0">
-            <svg viewBox="0 0 56 56" aria-hidden="true"><use href="#g-educacao"/></svg>
-            <h3>Na ZG Biodiversidade Aplicada</h3>
-            <p style="max-width:48ch">
-              Cursos, formação de equipes, capacitação de produtores e técnicos,
-              metodologia científica, palestras e produção de material técnico.
-            </p>
-          </div>
-          <div class="pilar" style="grid-column:span 12;--i:1">
-            <h3>Na SouLBee</h3>
-            <p style="max-width:48ch">
-              Educação sensorial, formação sobre méis, terroir, diversidade dos
-              méis de abelhas nativas, degustação e percepção sensorial.
-            </p>
-          </div>
-          <div class="pilar" style="grid-column:span 12;--i:2">
-            <h3>No Vale do Canaã</h3>
-            <p style="max-width:48ch">
-              A dimensão prática: meliponicultura, manejo, produção e
-              transformação dos produtos da colônia.
-            </p>
-          </div>
-        </div>
-      </div>
+    <div class="btn-row reveal" style="margin-top:var(--s-7)">
+      <a class="btn btn-1" href="projetos.html">Todos os projetos e experiências</a>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     == SB:TRAJETORIA ==
+     == SB:TRAJETORIA == credenciais como prova para edital
      ============================================================ -->
 <section class="sec band-page" id="trajetoria">
   <div class="container">
     <div class="g12" style="row-gap:var(--s-6)">
       <div style="grid-column:1 / span 5" class="reveal">
-        <span class="eyebrow">04 · Trajetória</span>
-        <h2 style="margin-top:var(--s-4)">Formação e atuação</h2>
+        <span class="eyebrow">06 · Trajetória</span>
+        <h2 style="margin-top:var(--s-4)">Formação científica a serviço do território.</h2>
       </div>
       <div style="grid-column:7 / span 6" class="reveal" data-i="1">
         <p>
-          Bióloga, pesquisadora e sommelière de méis, com atuação destacada na
-          curadoria sensorial de méis de abelhas nativas brasileiras. Fundadora
-          da SouLBee e do Meliponário Vale do Canaã. Formada pelo Instituto 4e,
-          atua como jurada em concursos nacionais e internacionais. Mestrado
-          pela UFES e doutorado pela USP.
+          Bióloga e pesquisadora, com mestrado pela UFES e doutorado pela USP.
+          A pesquisa em biologia vegetal, agricultura e temas correlatos
+          construiu as competências que a consultoria usa: formular perguntas,
+          desenhar método, operar pesquisa, analisar dados e comunicar
+          resultados.
+        </p>
+        <p style="margin-top:var(--s-4)">
+          Fundadora da ZG Biodiversidade Aplicada, da SouLBee e do Meliponário
+          Vale do Canaã. Sommelière de méis formada pelo Instituto 4e e jurada
+          em concursos nacionais e internacionais.
         </p>
         <ul class="creds" style="margin-top:var(--s-6)">
           <li>Bióloga</li>
           <li>Mestrado — UFES</li>
           <li>Doutorado — USP</li>
-          <li>Sommelière de méis — Instituto 4e</li>
+          <li>Pesquisa em biologia vegetal e agricultura</li>
+          <li>Docente convidada</li>
           <li>Jurada em concursos nacionais e internacionais</li>
-          <li>Docente convidada — curso de sommelier de méis</li>
         </ul>
         <p class="mono-caps" style="color:var(--tx-2);margin-top:var(--s-5)">
-          <span class="ph">[preencher: projetos que podem ser citados sem ferir confidencialidade]</span>
+          <span class="ph">[preencher: registro profissional e projetos que podem ser citados]</span>
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     == SB:CTA ==
-     ============================================================ -->
+<!-- == SB:CTA == -->
 <section class="sec band-sunken" id="contato">
   <div class="container">
     <div class="g12" style="align-items:center;row-gap:var(--s-6)">
       <div style="grid-column:1 / span 7" class="reveal">
-        <span class="eyebrow">05 · Contato</span>
-        <h2 style="margin-top:var(--s-4)">Por onde você quer começar?</h2>
+        <span class="eyebrow">07 · Contato</span>
+        <h2 style="margin-top:var(--s-4)">Tem um projeto de restauração em andamento ou em desenho?</h2>
         <p class="lead" style="margin-top:var(--s-4)">
-          Projeto, degustação, formação ou colônias — a conversa começa no mesmo
-          lugar, e eu já chego sabendo o assunto.
+          Conte a etapa em que ele está — diagnóstico, proposta, implantação ou
+          monitoramento — e eu volto com uma proposta técnica.
         </p>
       </div>
       <div style="grid-column:9 / span 4" class="reveal" data-i="1">
         <div class="btn-row" style="flex-direction:column;align-items:stretch">
-          <a class="btn btn-1" href="contato.html">Falar comigo</a>
-          <a class="btn btn-2" href="https://instagram.com/soulbee.o"
-             target="_blank" rel="noopener noreferrer">Instagram @soulbee.o</a>
+          <a class="btn btn-1" href="contato.html?oferta=restauracao">Propor um projeto</a>
+          <a class="btn btn-2" href="projetos.html">Ver projetos e experiências</a>
         </div>
       </div>
     </div>
@@ -382,39 +502,36 @@
             <span>ZG Biodiversidade Aplicada</span>
           </span>
         </span>
-        <p>
-          Biodiversidade, ciência e desenvolvimento rural. SouLBee e Meliponário
-          Vale do Canaã são iniciativas da mesma trajetória.
-        </p>
+        <p>Consultoria em restauração florestal e biodiversidade aplicada.</p>
       </div>
       <div class="ft-col">
-        <h4>Atuação</h4>
+        <h4>Consultoria</h4>
         <ul>
-          <li><a href="#frentes">Frentes</a></li>
-          <li><a href="#ciencia">Ciência aplicada</a></li>
-          <li><a href="#educacao">Educação</a></li>
+          <li><a href="#consultoria">Linhas de atuação</a></li>
+          <li><a href="#metodo">Como trabalho</a></li>
+          <li><a href="#diferencial">Polinizadores</a></li>
           <li><a href="#trajetoria">Trajetória</a></li>
         </ul>
       </div>
       <div class="ft-col">
-        <h4>Iniciativas</h4>
+        <h4>Projetos</h4>
         <ul>
-          <li><a href="experiencias.html">SouLBee — experiências</a></li>
+          <li><a href="projetos.html">Projetos e experiências</a></li>
           <li><a href="meliponicultura.html">Vale do Canaã</a></li>
-          <li><a href="meliponicultura.html#colonias">Colônias</a></li>
+          <li><a href="experiencias.html">SouLBee</a></li>
         </ul>
       </div>
       <div class="ft-col">
         <h4>Contato</h4>
         <ul>
-          <li><a href="contato.html">Formulário</a></li>
-          <li><a href="https://instagram.com/soulbee.o" target="_blank" rel="noopener noreferrer">@soulbee.o</a></li>
+          <li><a href="contato.html?oferta=restauracao">Propor um projeto</a></li>
+          <li><span class="ph">[e-mail]</span></li>
           <li><span class="ph">[WhatsApp]</span></li>
         </ul>
       </div>
     </div>
     <div class="ft-legal">
-      <p>Camilla Zanotti Gallon é sommelière de méis formada pelo Instituto 4e. Conteúdo técnico sujeito a revisão.</p>
+      <p>Conteúdo técnico sujeito a revisão.</p>
       <p>© 2026 ZG Biodiversidade Aplicada Ltda. · <span class="ph">[CNPJ]</span> · <span class="ph">[cidade, estado]</span></p>
     </div>
   </div>
